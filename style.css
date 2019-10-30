@@ -4,7 +4,7 @@ body {  }
   padding-top: 70px;
   height: 240px;
   background: transparent;
-  background: url("background.jpg");
+  background: url("background.jpg") center center;
   margin-bottom: -30px;
   font-family: 'Judson', serif;
 }
