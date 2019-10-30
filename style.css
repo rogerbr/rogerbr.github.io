@@ -23,6 +23,8 @@ h3, h4, h5, h6
 
 p{
   margin-top: 25px;
+   margin-left: 100px;
+   margin-right: 100px;
 }
 section#title img {
   padding-top: 30px;
