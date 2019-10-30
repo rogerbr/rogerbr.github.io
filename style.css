@@ -16,27 +16,17 @@ h1,h2{
  
 }
 
- h3, h4, h5, h6 
-{ font-family: 'Montserrat', sans-serif;    
- margin-bottom: -10px;
- margin-bottom: 15px;
- color = "#ffffff";
+h3, h4, h5, h6 
+{
+  font-family: 'Montserrat', sans-serif;    
 }
 
-.jumbotron .btn {
-  margin-right: 20px;
-  margin-top: 15px;  
+p{
+  margin-top: 25px;
 }
-
 section#title img {
   padding-top: 30px;
   border-radius: 50%;
-}
-
-#logo {  
-  border-radius: 5px;  
-  width: 350px;
-  padding: 35px 0;
 }
 
 .social {
