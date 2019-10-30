@@ -4,7 +4,7 @@ body {  }
   padding-top: 70px;
   height: 240px;
   background: transparent;
-  background: url("https://images.unsplash.com/photo-1444090542259-0af8fa96557e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=b263b22ca6e84d3d50bd86717beaa629") no-repeat center center fixed;
+  background: url("background.jpg") no-repeat center center;
   margin-bottom: -30px;
   font-family: 'Judson', serif;
 }
