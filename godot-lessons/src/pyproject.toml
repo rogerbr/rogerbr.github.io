@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+
+[project]
+name = "pygments-gdscript"
+description = "An updated Pygments GDScript lexer"
+version = "1.0.0"
+requires-python = ">=3.8" # enforced due to Pygments
+dependencies = ["pygments"]
+
+[project.urls]
+Repository = "https://github.com/GodotModding/pygments-gdscript"
+Issues = "https://github.com/GodotModding/pygments-gdscript/issues"
+
+# extend Pygments without hacking the sources
+# see: https://pygments.org/docs/plugins/
+[project.entry-points."pygments.lexers"]
+gdscript-lexer = "gdscript_lexer:GDScriptLexer"
+
+[project.entry-points."pygments.style"]
+gdscript-style = "gdscript_style:GDScriptStyle"

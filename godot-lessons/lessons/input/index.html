@@ -1,0 +1,1046 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/input/">
+      
+      
+        <link rel="prev" href="../resources/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
+    
+    
+      
+        <title>Input - Godot 4.5 Lessons</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#input-handling-in-godot-45" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Godot 4.5 Lessons" class="md-header__button md-logo" aria-label="Godot 4.5 Lessons" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Godot 4.5 Lessons
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Input
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Godot 4.5 Lessons" class="md-nav__button md-logo" aria-label="Godot 4.5 Lessons" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Godot 4.5 Lessons
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Lessons
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lessons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene_management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Scene Mangement
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../autoloads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Autoloads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Input
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Input
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-input-handling-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What Input Handling Means
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-polling-inside-_process" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 1. Polling Inside _process()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧭 1. Polling Inside _process()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-event-based-_inputevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖱️ 2. Event-based: _input(event)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖱️ 2. Event-based: _input(event)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-_unhandled_inputevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 3. _unhandled_input(event)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚫 3. _unhandled_input(event)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-combining-all-three" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Example: Combining All Three
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-input-map-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 4. Input Map Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mouse-touch-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 5. Mouse &amp; Touch Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      🪤 Common Pitfalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-capturing-releasing-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Bonus: Capturing &amp; Releasing the Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Quick Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Mini Challenge
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-input-handling-means" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 What Input Handling Means
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-polling-inside-_process" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 1. Polling Inside _process()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧭 1. Polling Inside _process()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-event-based-_inputevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🖱️ 2. Event-based: _input(event)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖱️ 2. Event-based: _input(event)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-_unhandled_inputevent" class="md-nav__link">
+    <span class="md-ellipsis">
+      🚫 3. _unhandled_input(event)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🚫 3. _unhandled_input(event)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      When to use:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-combining-all-three" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Example: Combining All Three
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-input-map-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 4. Input Map Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-mouse-touch-events" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎮 5. Mouse &amp; Touch Events
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls" class="md-nav__link">
+    <span class="md-ellipsis">
+      🪤 Common Pitfalls
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bonus-capturing-releasing-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      💾 Bonus: Capturing &amp; Releasing the Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Quick Recap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Mini Challenge
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="input-handling-in-godot-45">🎮 Input Handling in Godot 4.5</h1>
+<p>Interactivity begins with <strong>input</strong> — key presses, mouse clicks, or touch events.<br />
+Godot provides multiple ways to handle input, each suited for different gameplay needs.</p>
+<hr />
+<h2 id="what-input-handling-means">🎯 What Input Handling Means</h2>
+<p>Godot separates input into <strong>three main layers</strong>:</p>
+<ol>
+<li><strong>Immediate (Polling)</strong> – check input states each frame  </li>
+<li><strong>Event-based (<code>_input</code>)</strong> – respond as events happen  </li>
+<li><strong>Unhandled (<code>_unhandled_input</code>)</strong> – catch events not used by UI</li>
+</ol>
+<p>Each exists to give you control over <em>when</em> and <em>how</em> input affects gameplay.</p>
+<hr />
+<h2 id="1-polling-inside-_process">🧭 1. Polling Inside <code>_process()</code></h2>
+<p>The simplest way to check input is by polling it in the update loop.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_right&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">position</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">delta</span>
+</code></pre></div>
+<p>Here, every frame we query the <strong>input map</strong> (configured in <em>Project → Project Settings → Input Map</em>).</p>
+<h3 id="when-to-use">When to use:</h3>
+<ul>
+<li>Continuous input (movement, holding a key)</li>
+<li>Needs smooth or frame-based behavior</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use polling for actions that are <em>held down</em> (e.g., walking, aiming, charging).</p>
+</div>
+<hr />
+<h2 id="2-event-based-_inputevent">🖱️ 2. Event-based: <code>_input(event)</code></h2>
+<p>If you want to respond <strong>once per event</strong>, use <code>_input(event)</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jump pressed!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>This method triggers <strong>every time</strong> an input event occurs (key, mouse, touch, joystick).</p>
+<h3 id="when-to-use_1">When to use:</h3>
+<ul>
+<li>One-shot actions (jump, fire, click)</li>
+<li>Reading raw input events (e.g., mouse motion, wheel)</li>
+<li>Detecting modifier keys (Ctrl, Shift, etc.)</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>_input</code> is called <strong>before the scene tree processes</strong> the event.
+If your UI or nodes consume it, later steps may not receive it.</p>
+</div>
+<hr />
+<h2 id="3-_unhandled_inputevent">🚫 3. <code>_unhandled_input(event)</code></h2>
+<p>After UI and focused controls process input, Godot sends the leftovers here.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_cancel&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
+<p>Perfect for <em>global shortcuts</em> or <em>menu escapes</em> that shouldn’t interfere with gameplay UI.</p>
+<h3 id="when-to-use_2">When to use:</h3>
+<ul>
+<li>Fallback or global inputs (pause, exit)</li>
+<li>Handling events not consumed by UI</li>
+</ul>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+</div>
+<p><code>_unhandled_input()</code> only triggers if <strong>no GUI element</strong> handled the event first.</p>
+<hr />
+<h2 id="example-combining-all-three">🧩 Example: Combining All Three</h2>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody2D</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_right&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">dir</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_left&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">dir</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dir</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">200</span>
+<span class="w">    </span><span class="n">move_and_slide</span><span class="p">()</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">velocity</span><span class="o">.</span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mi">400</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_cancel&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<ul>
+<li><code>_process()</code> continuously moves the player.</li>
+<li><code>_input()</code> triggers discrete jumps.</li>
+<li><code>_unhandled_input()</code> lets the player quit with Escape.</li>
+</ul>
+</div>
+<hr />
+<h2 id="4-input-map-setup">🧠 4. Input Map Setup</h2>
+<p>Add named actions in <strong>Project → Project Settings → Input Map</strong>.
+Example setup:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Key / Button</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ui_left</code></td>
+<td>←</td>
+</tr>
+<tr>
+<td><code>ui_right</code></td>
+<td>→</td>
+</tr>
+<tr>
+<td><code>jump</code></td>
+<td>Space</td>
+</tr>
+<tr>
+<td><code>ui_cancel</code></td>
+<td>Esc</td>
+</tr>
+</tbody>
+</table>
+<p>This lets you change controls easily without editing code.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Input actions are more flexible than raw key codes —
+players can rebind them, and you can map multiple keys per action.</p>
+</div>
+<hr />
+<h2 id="5-mouse-touch-events">🎮 5. Mouse &amp; Touch Events</h2>
+<p>Godot treats all input uniformly as <code>InputEvent</code> objects.</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">InputEventMouseButton</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mouse clicked at:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+</code></pre></div>
+<p>You can detect other subclasses like:</p>
+<ul>
+<li><code>InputEventKey</code></li>
+<li><code>InputEventMouseMotion</code></li>
+<li><code>InputEventJoypadButton</code></li>
+<li><code>InputEventScreenTouch</code></li>
+</ul>
+<hr />
+<h2 id="common-pitfalls">🪤 Common Pitfalls</h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>Avoid mixing polling and event logic on the same action unless necessary.</li>
+<li><code>_input()</code> is called <em>multiple times per frame</em> if many events happen quickly.</li>
+<li>Don’t forget <code>event.is_pressed()</code> — otherwise, you’ll handle both press and release.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For one-shot triggers, use <code>is_action_just_pressed()</code> inside <code>_process()</code>
+if you prefer polling style.</p>
+</div>
+<hr />
+<h2 id="bonus-capturing-releasing-the-mouse">💾 Bonus: Capturing &amp; Releasing the Mouse</h2>
+<div class="highlight"><pre><span></span><code><span class="n">Input</span><span class="o">.</span><span class="n">set_mouse_mode</span><span class="p">(</span><span class="n">Input</span><span class="o">.</span><span class="n">MOUSE_MODE_CAPTURED</span><span class="p">)</span>
+</code></pre></div>
+<p>Use this for 3D camera control or first-person games.
+Release with:</p>
+<div class="highlight"><pre><span></span><code><span class="n">Input</span><span class="o">.</span><span class="n">set_mouse_mode</span><span class="p">(</span><span class="n">Input</span><span class="o">.</span><span class="n">MOUSE_MODE_VISIBLE</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="quick-recap">🧩 Quick Recap</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Purpose</th>
+<th>Typical Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>_process()</code></td>
+<td>Polling</td>
+<td>Continuous input (movement)</td>
+</tr>
+<tr>
+<td><code>_input(event)</code></td>
+<td>Event-driven</td>
+<td>Immediate reactions (jump, click)</td>
+</tr>
+<tr>
+<td><code>_unhandled_input(event)</code></td>
+<td>Global fallback</td>
+<td>Menu shortcuts, exit keys</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="mini-challenge">🧠 Mini Challenge</h2>
+<p>Create a simple 2D player that:</p>
+<ol>
+<li>Moves left/right using polling</li>
+<li>Jumps with <code>_input(event)</code></li>
+<li>Quits the game using <code>_unhandled_input()</code> when pressing Escape.</li>
+</ol>
+<hr />
+<p>✅ <strong>Next Lesson:</strong> <em>Coming soon – Scenes &amp; Instancing</em></p>
+<div class="highlight"><pre><span></span><code>---
+
+Would you like me to follow up by writing that **“Scenes &amp; Instancing”** lesson next (same tone, with a couple of toy examples showing packed scenes and instancing at runtime)?
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

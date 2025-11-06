@@ -1,0 +1,30 @@
+site_name: Godot 4.5 Lessons
+site_url: https://YOUR_USERNAME.github.io/godot-lessons/
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+markdown_extensions:
+  - admonition  
+  - pymdownx.highlight:      
+      linenums_style: pymdownx-inline
+  - pymdownx.superfences 
+  - tables
+
+nav:
+  - Home: index.md
+  - Lessons:
+      - Demo: lessons/demo.md
+      - Scene Mangement: lessons/scene_management.md
+      - Autoloads: lessons/autoloads.md
+      - Resources: lessons/resources.md
+      - Input: lessons/input.md
