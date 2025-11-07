@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/scene_management/">
+        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/mouse_raycast/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../mouse_area3d/">
       
       
-        <link rel="next" href="../autoloads/">
+        <link rel="next" href="../animation/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Scene Mangement - Godot 4.5 Lessons</title>
+        <title>Mouse Interactions Raycast - Godot 4.5 Lessons</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#scene-management" class="md-skip">
+        <a href="#raycast-based-mouse-interaction" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Scene Mangement
+              Mouse Interactions Raycast
             
           </span>
         </div>
@@ -291,32 +291,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Scene Mangement
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../scene_management/" class="md-nav__link">
         
   
   
@@ -327,77 +305,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#scene-management-controlling-whats-loaded" class="md-nav__link">
-    <span class="md-ellipsis">
-      Scene Management = Controlling What’s Loaded
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Loaded">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-switching-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Switching Scenes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-a-scene-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Loading a Scene Instance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-asynchronous-loading-for-large-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Asynchronous Loading (for large scenes)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
-    <span class="md-ellipsis">
-      Summary
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -476,18 +383,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" checked>
         
           
           <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
@@ -503,7 +412,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_5">
             <span class="md-nav__icon md-icon"></span>
             Mouse Interactions
@@ -560,10 +469,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../mouse_raycast/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Mouse Interactions Raycast
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -574,6 +505,80 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-raycast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Raycast?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-picking-objects-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Picking Objects with the Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-highlight-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Highlight Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Enhancements
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -667,51 +672,54 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scene-management-controlling-whats-loaded" class="md-nav__link">
+  <a href="#why-raycast" class="md-nav__link">
     <span class="md-ellipsis">
-      Scene Management = Controlling What’s Loaded
+      Why Raycast?
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Loaded">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-switching-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Switching Scenes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-a-scene-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Loading a Scene Instance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-asynchronous-loading-for-large-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Asynchronous Loading (for large scenes)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#summary" class="md-nav__link">
+  <a href="#concept" class="md-nav__link">
     <span class="md-ellipsis">
-      Summary
+      Concept
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-picking-objects-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Picking Objects with the Mouse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-highlight-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Highlight Object
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How It Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optional Enhancements
     </span>
   </a>
   
@@ -733,106 +741,110 @@
 
 
 
-<h1 id="scene-management">Scene Management</h1>
+<h1 id="raycast-based-mouse-interaction">Raycast-Based Mouse Interaction</h1>
+<p>Detect what object the mouse is pointing at or clicking, even if the cursor is hidden or camera moves freely.</p>
 <hr />
-<h2 id="scene-management-controlling-whats-loaded">Scene Management = Controlling What’s Loaded</h2>
-<p>Scene management is how your game <strong>switches between scenes</strong>, <strong>loads/unloads content</strong>, and <strong>keeps track of what’s currently active</strong>.</p>
+<h2 id="why-raycast">Why Raycast?</h2>
+<p>Unlike the signal-based method (<code>mouse_entered</code>, <code>input_event</code>, etc.),
+<strong>Raycasting</strong> gives you <strong>full control</strong> over <em>what</em>, <em>when</em>, and <em>how</em> to detect clicks.</p>
+<div class="admonition note">
+<p class="admonition-title">when to use</p>
+<ul>
+<li><strong>First-person cameras</strong> (cursor locked, hidden)</li>
+<li><strong>Top-down strategy or selection tools</strong></li>
+<li><strong>Custom cursors or aim reticles</strong></li>
+<li><strong>Precise one-off checks</strong> (e.g., left-click selection)</li>
+</ul>
+</div>
 <hr />
-<h3 id="example-switching-scenes">Example: Switching Scenes</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># main_menu.gd</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Control</span>
+<h2 id="concept">Concept</h2>
+<ol>
+<li><strong>Get mouse position on screen</strong></li>
+<li>Ask the <strong>camera</strong> where that point corresponds in 3D space.</li>
+<li>Cast a <strong>ray</strong> into the world.</li>
+<li>Use <code>direct_space_state.intersect_ray()</code> to find what you hit.</li>
+</ol>
+<hr />
+<h2 id="example-picking-objects-with-the-mouse">Example: Picking Objects with the Mouse</h2>
+<p><strong>Scene:</strong></p>
+<div class="highlight"><pre><span></span><code>Main (Node3D)
+├─ Camera3D
+├─ DirectionalLight3D
+├─ Several cubes (StaticBody3D, Area3D, etc. with colliders)
+</code></pre></div>
+<p><strong><code>res://scripts/MousePicker.gd</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
 
-<span class="k">func</span><span class="w"> </span><span class="n">_on_play_button_pressed</span><span class="p">():</span>
-<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_file</span><span class="p">(</span><span class="s2">&quot;res://scenes/game_scene.tscn&quot;</span><span class="p">)</span>
+<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">camera</span><span class="p">:</span><span class="w"> </span><span class="n">Camera3D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">Camera3D</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span><span class="w"> </span><span class="n">InputEvent</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">InputEventMouseButton</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">button_index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MOUSE_BUTTON_LEFT</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+<span class="w">        </span><span class="n">_check_mouse_click</span><span class="p">()</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">_check_mouse_click</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">mouse_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_viewport</span><span class="p">()</span><span class="o">.</span><span class="n">get_mouse_position</span><span class="p">()</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_origin</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_normal</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000.0</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">space_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">direct_space_state</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PhysicsRayQueryParameters3D</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">)</span>
+<span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
+<span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_bodies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
+
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">space_state</span><span class="o">.</span><span class="n">intersect_ray</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">result</span><span class="p">:</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">collider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;collider&quot;</span><span class="p">]</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clicked:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; at &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+<span class="w">        </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">)</span>
+<span class="w">    </span><span class="k">else</span><span class="p">:</span>
+<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing hit.&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="example-highlight-object">Example: Highlight Object</h2>
+<p>Add this helper method in the same script:</p>
+<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">:</span><span class="w"> </span><span class="n">Node</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">):</span>
+<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w">  </span><span class="c1"># yellow tint</span>
+<span class="w">        </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+<span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">WHITE</span>
+</code></pre></div>
+<hr />
+<h2 id="how-it-works">How It Works</h2>
+<ol>
+<li><code>project_ray_origin(mouse_pos)</code> → gets the world-space position of the camera ray’s start.</li>
+<li><code>project_ray_normal(mouse_pos)</code> → gets the normalized direction vector.</li>
+<li>
+<p><code>intersect_ray(query)</code> → tells you:</p>
+</li>
+<li>
+<p><code>"collider"</code>: the object hit</p>
+</li>
+<li><code>"position"</code>: 3D hit position</li>
+<li><code>"normal"</code>: surface normal</li>
+<li><code>"rid"</code>: RID of the object</li>
+<li><code>"shape"</code>: shape index</li>
+</ol>
+<hr />
+<h2 id="optional-enhancements">Optional Enhancements</h2>
+<ul>
+<li><strong>Draw a Debug Ray</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">debug_draw_line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
 </code></pre></div>
 <ul>
-<li><code>get_tree()</code> gives access to the <strong>SceneTree</strong>, Godot’s global runtime manager.</li>
-<li><code>change_scene_to_file()</code> <strong>unloads the current scene</strong> and <strong>loads a new one</strong>.</li>
+<li><strong>Pick Only Certain Layers</strong>:</li>
 </ul>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>✅ Simple and clean for scene transitions.<br>
-⚠️ Old scene nodes are <strong>freed</strong> automatically so don’t rely on them after the switch.</p>
-</div>
-<hr />
-<h3 id="example-loading-a-scene-instance">Example: Loading a Scene Instance</h3>
-<p>Instead of switching to a different scene, you can <strong>instance</strong> a scene inside another scene.
-This will add a copy (instance) of that scene in the current scene:</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">enemy_scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">preload</span><span class="p">(</span><span class="s2">&quot;res://scenes/enemy.tscn&quot;</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enemy_scene</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
-<span class="w">    </span><span class="n">add_child</span><span class="p">(</span><span class="n">enemy</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">query</span><span class="o">.</span><span class="n">collision_mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c1"># only hit objects on layer 2</span>
 </code></pre></div>
-<p>This is <strong>scene composition</strong>:  reusing scenes like prefabs.</p>
+<ul>
+<li><strong>Right-click, middle-click, drag</strong>, etc.:
+  Handle them all via <code>_unhandled_input(event)</code>.</li>
+</ul>
 <hr />
-<h3 id="example-asynchronous-loading-for-large-scenes">Example: Asynchronous Loading (for large scenes)</h3>
-<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">load_next_scene</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">loader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_request</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get_status</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">THREAD_LOAD_LOADED</span><span class="p">:</span>
-<span class="w">        </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">process_frame</span><span class="w">  </span><span class="c1"># keep UI responsive</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
-<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>✅ Useful for splash screens or streaming levels.</p>
-</div>
-<hr />
-<div class="admonition tip">
-<p class="admonition-title"><strong>Scene Organization Tips</strong></p>
-<table>
-<thead>
-<tr>
-<th>tip</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Use folders like <code>scenes/ui</code>, <code>scenes/levels</code>, <code>scenes/actors</code></td>
-<td>Keeps project structured</td>
-</tr>
-<tr>
-<td>Use consistent root types (e.g., <code>Node3D</code> for levels, <code>Control</code> for menus)</td>
-<td>Easier transitions</td>
-</tr>
-<tr>
-<td>Keep one <strong>main scene</strong> (e.g., <code>main.tscn</code>)</td>
-<td>Serves as game entry point</td>
-</tr>
-<tr>
-<td>Use <strong>autoloads</strong> for persistent managers</td>
-<td>Keeps global state across scene loads</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="summary">Summary</h2>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>SceneTree</strong></td>
-<td>Manages active scenes, nodes, and transitions</td>
-</tr>
-<tr>
-<td><strong><code>change_scene_to_file()</code></strong></td>
-<td>Replace current scene entirely</td>
-</tr>
-<tr>
-<td><strong>Instancing</strong></td>
-<td>Add one scene as a node inside another</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<p>✅ <strong>Next Lesson:</strong> <a href="../autoloads/">Autoloads</a></p>
+<p>Back : <a href="../mouse_interactions/">Mouse Interactions</a><br>
+Next : <a href="./">Mouse Interactions - Raycast</a></p>
 
 
 

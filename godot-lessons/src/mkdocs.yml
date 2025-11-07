@@ -27,5 +27,9 @@ nav:
       - Autoloads: lessons/autoloads.md
       - Resources: lessons/resources.md
       - Input: lessons/input.md
+      - Mouse Interactions: 
+          - Mouse Interactions: lessons/mouse_interactions.md
+          - Mouse Interactions Area3D: lessons/mouse_area3d.md
+          - Mouse Interactions Raycast: lessons/mouse_raycast.md
       - Animation: lessons/animation.md
       - Lighting: lessons/lighting.md

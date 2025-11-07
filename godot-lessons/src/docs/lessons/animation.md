@@ -1,9 +1,5 @@
-Perfect 👌 — let’s take the same pedagogical structure and move it into **3D animation in Godot 4.5**, where we can cover **skeletons, AnimationPlayer, AnimationTree, and AnimationMixer**.
-This is a **mini-lecture** written in Markdown format, ideal for your MkDocs Godot lessons.
 
----
-
-# Godot 4.5 Mini-Lesson: Animation in 3D
+# Animation in 3D
 
 ---
 
