@@ -14,6 +14,8 @@
         <link rel="prev" href="../resources/">
       
       
+        <link rel="next" href="../animation/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
@@ -519,15 +521,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#capturing-releasing-the-mouse" class="md-nav__link">
     <span class="md-ellipsis">
       Capturing &amp; Releasing the Mouse
@@ -558,6 +551,52 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lighting
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -705,15 +744,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#common-pitfalls" class="md-nav__link">
-    <span class="md-ellipsis">
-      Common Pitfalls
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#capturing-releasing-the-mouse" class="md-nav__link">
     <span class="md-ellipsis">
       Capturing &amp; Releasing the Mouse
@@ -850,6 +880,19 @@ If your UI or nodes consume it, later steps may not receive it.</p>
 <li><code>_unhandled_input()</code> lets the player quit with Escape.</li>
 </ul>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For one-shot triggers, use <code>is_action_just_pressed()</code> inside <code>_process()</code>
+if you prefer polling style.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul>
+<li>Avoid mixing polling and event logic on the same action unless necessary.</li>
+<li><code>_input()</code> is called <em>multiple times per frame</em> if many events happen quickly.</li>
+<li>Don’t forget <code>event.is_pressed()</code> — otherwise, you’ll handle both press and release.</li>
+</ul>
+</div>
 <hr />
 <h2 id="input-map-setup">Input Map Setup</h2>
 <p>Add named actions in <strong>Project → Project Settings → Input Map</strong>.
@@ -863,11 +906,11 @@ Example setup:</p>
 </thead>
 <tbody>
 <tr>
-<td><code>ui_left</code></td>
+<td><code>move_left</code></td>
 <td>←</td>
 </tr>
 <tr>
-<td><code>ui_right</code></td>
+<td><code>move_right</code></td>
 <td>→</td>
 </tr>
 <tr>
@@ -875,7 +918,7 @@ Example setup:</p>
 <td>Space</td>
 </tr>
 <tr>
-<td><code>ui_cancel</code></td>
+<td><code>quit</code></td>
 <td>Esc</td>
 </tr>
 </tbody>
@@ -900,21 +943,6 @@ players can rebind them, and you can map multiple keys per action.</p>
 <li><code>InputEventJoypadButton</code></li>
 <li><code>InputEventScreenTouch</code></li>
 </ul>
-<hr />
-<h2 id="common-pitfalls">Common Pitfalls</h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<ul>
-<li>Avoid mixing polling and event logic on the same action unless necessary.</li>
-<li><code>_input()</code> is called <em>multiple times per frame</em> if many events happen quickly.</li>
-<li>Don’t forget <code>event.is_pressed()</code> — otherwise, you’ll handle both press and release.</li>
-</ul>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>For one-shot triggers, use <code>is_action_just_pressed()</code> inside <code>_process()</code>
-if you prefer polling style.</p>
-</div>
 <hr />
 <h2 id="capturing-releasing-the-mouse">Capturing &amp; Releasing the Mouse</h2>
 <div class="highlight"><pre><span></span><code><span class="n">Input</span><span class="o">.</span><span class="n">set_mouse_mode</span><span class="p">(</span><span class="n">Input</span><span class="o">.</span><span class="n">MOUSE_MODE_CAPTURED</span><span class="p">)</span>
@@ -960,7 +988,7 @@ Release with:</p>
 <li>Quits the game using <code>_unhandled_input()</code> when pressing Escape.</li>
 </ol>
 <hr />
-<p>✅ <strong>Next Lesson:</strong>  comming soon </p>
+<p>✅ <strong>Next Lesson:</strong> <a href="../animation/">Animation</a></p>
 
 
 

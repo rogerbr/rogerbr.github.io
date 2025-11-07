@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://YOUR_USERNAME.github.io/godot-lessons/</loc>
-         <lastmod>2025-11-06</lastmod>
+         <lastmod>2025-11-07</lastmod>
+    </url>
+    <url>
+         <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/animation/</loc>
+         <lastmod>2025-11-07</lastmod>
     </url>
     <url>
          <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/autoloads/</loc>
-         <lastmod>2025-11-06</lastmod>
+         <lastmod>2025-11-07</lastmod>
     </url>
     <url>
          <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/input/</loc>
-         <lastmod>2025-11-06</lastmod>
+         <lastmod>2025-11-07</lastmod>
+    </url>
+    <url>
+         <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/lighting/</loc>
+         <lastmod>2025-11-07</lastmod>
     </url>
     <url>
          <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/resources/</loc>
-         <lastmod>2025-11-06</lastmod>
+         <lastmod>2025-11-07</lastmod>
     </url>
     <url>
          <loc>https://YOUR_USERNAME.github.io/godot-lessons/lessons/scene_management/</loc>
-         <lastmod>2025-11-06</lastmod>
+         <lastmod>2025-11-07</lastmod>
     </url>
 </urlset>

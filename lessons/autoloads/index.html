@@ -377,18 +377,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-4-defining-an-autoload-script" class="md-nav__link">
+  <a href="#example-defining-an-autoload-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 4: Defining an Autoload Script
+      Example: Defining an Autoload Script
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-5-persistent-nodes-via-autoload-scene" class="md-nav__link">
+  <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 5: Persistent Nodes via Autoload Scene
+      Example: Persistent Nodes via Autoload Scene
     </span>
   </a>
   
@@ -400,18 +400,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pitfalls-considerations" class="md-nav__link">
+  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Pitfalls &amp; Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-6-combining-scene-management-with-autoloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 6: Combining Scene Management with Autoloads
+      Example: Combining Scene Management with Autoloads
     </span>
   </a>
   
@@ -432,21 +423,6 @@
       Summary
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -505,6 +481,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lighting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -549,18 +571,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-4-defining-an-autoload-script" class="md-nav__link">
+  <a href="#example-defining-an-autoload-script" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 4: Defining an Autoload Script
+      Example: Defining an Autoload Script
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-5-persistent-nodes-via-autoload-scene" class="md-nav__link">
+  <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
     <span class="md-ellipsis">
-      Example 5: Persistent Nodes via Autoload Scene
+      Example: Persistent Nodes via Autoload Scene
     </span>
   </a>
   
@@ -572,18 +594,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pitfalls-considerations" class="md-nav__link">
+  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
     <span class="md-ellipsis">
-      ⚠️ Pitfalls &amp; Considerations
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-6-combining-scene-management-with-autoloads" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example 6: Combining Scene Management with Autoloads
+      Example: Combining Scene Management with Autoloads
     </span>
   </a>
   
@@ -604,21 +617,6 @@
       Summary
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Summary">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#best-practices" class="md-nav__link">
-    <span class="md-ellipsis">
-      💡 Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -641,8 +639,8 @@
 <h1 id="autoloads">Autoloads</h1>
 <hr />
 <h2 id="what-are-autoloads">What Are Autoloads?</h2>
-<p><strong>Autoloads</strong> are <strong>singleton nodes or scripts</strong> that stay loaded across all scenes.
-They’re registered in <strong>Project Settings → Autoload</strong>, and become <strong>global variables</strong> accessible anywhere.</p>
+<p><strong>Autoloads</strong> are special scripts or scenes in Godot that are loaded automatically when your game starts and remain active for the entire runtime, no matter which scene is currently loaded.</p>
+<p>When you register a script or scene as an <strong>autoload</strong> in <strong>Project Settings → Autoload</strong>, it becomes a <strong>singleton</strong>, meaning that there is only one instance of it, and it persists across all scene changes. Each <strong>autoload</strong> is assigned a <strong>global</strong> name, allowing you to access its variables and functions from any script in your project, just like a built-in global variable.</p>
 <p>Autoloads are perfect for:</p>
 <ul>
 <li>global data (e.g., player stats, settings)</li>
@@ -651,7 +649,7 @@ They’re registered in <strong>Project Settings → Autoload</strong>, and beco
 <li>event bus / signal hubs</li>
 </ul>
 <hr />
-<h3 id="example-4-defining-an-autoload-script">Example 4: Defining an Autoload Script</h3>
+<h3 id="example-defining-an-autoload-script">Example: Defining an Autoload Script</h3>
 <ol>
 <li>Create a new script: <code>res://globals/game_state.gd</code></li>
 </ol>
@@ -677,11 +675,14 @@ They’re registered in <strong>Project Settings → Autoload</strong>, and beco
 <div class="highlight"><pre><span></span><code><span class="n">GameState</span><span class="o">.</span><span class="n">add_score</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">GameState</span><span class="o">.</span><span class="n">score</span><span class="p">)</span><span class="w">  </span><span class="c1"># works globally!</span>
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>✅ <code>GameState</code> is loaded once and persists across scene changes.</p>
+</div>
 <hr />
-<h3 id="example-5-persistent-nodes-via-autoload-scene">Example 5: Persistent Nodes via Autoload Scene</h3>
+<h3 id="example-persistent-nodes-via-autoload-scene">Example: Persistent Nodes via Autoload Scene</h3>
 <p>Autoloads can also be full <strong>scenes</strong>, not just scripts.
-This is useful for managers that need nodes (e.g., AudioStreamPlayers).</p>
+This is useful for managers that need nodes ( eg. AudioStreamPlayers ).</p>
 <ol>
 <li>
 <p>Create <code>res://autoloads/audio_manager.tscn</code>
@@ -695,7 +696,8 @@ This is useful for managers that need nodes (e.g., AudioStreamPlayers).</p>
 <div class="highlight"><pre><span></span><code><span class="n">AudioManager</span><span class="o">.</span><span class="n">play_sound</span><span class="p">(</span><span class="s2">&quot;res://sounds/jump.wav&quot;</span><span class="p">)</span>
 </code></pre></div>
 <hr />
-<h2 id="pitfalls-considerations">⚠️ Pitfalls &amp; Considerations</h2>
+<div class="admonition warning">
+<p class="admonition-title">Pitfalls &amp; Considerations</p>
 <table>
 <thead>
 <tr>
@@ -726,8 +728,9 @@ This is useful for managers that need nodes (e.g., AudioStreamPlayers).</p>
 </tr>
 </tbody>
 </table>
+</div>
 <hr />
-<h2 id="example-6-combining-scene-management-with-autoloads">Example 6: Combining Scene Management with Autoloads</h2>
+<h2 id="example-combining-scene-management-with-autoloads">Example: Combining Scene Management with Autoloads</h2>
 <p>You can centralize scene transitions with a <strong>SceneManager</strong> autoload.</p>
 <p><strong>scene_manager.gd</strong></p>
 <div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
@@ -769,18 +772,6 @@ This is useful for managers that need nodes (e.g., AudioStreamPlayers).</p>
 </thead>
 <tbody>
 <tr>
-<td><strong>SceneTree</strong></td>
-<td>Manages active scenes, nodes, and transitions</td>
-</tr>
-<tr>
-<td><strong><code>change_scene_to_file()</code></strong></td>
-<td>Replace current scene entirely</td>
-</tr>
-<tr>
-<td><strong>Instancing</strong></td>
-<td>Add one scene as a node inside another</td>
-</tr>
-<tr>
 <td><strong>Autoloads</strong></td>
 <td>Global singletons that persist across scenes</td>
 </tr>
@@ -791,14 +782,16 @@ This is useful for managers that need nodes (e.g., AudioStreamPlayers).</p>
 </tbody>
 </table>
 <hr />
-<h3 id="best-practices">💡 Best Practices</h3>
-<p>✅ Use <strong>autoloads</strong> for persistent game state, scene management, or global services
-✅ Use <strong>scene instancing</strong> for modular, reusable game objects
-✅ Use <strong><code>get_tree().change_scene_to_file()</code></strong> for full transitions
-✅ Avoid storing direct references to nodes from old scenes
+<div class="admonition tip">
+<p class="admonition-title">Best Practices</p>
+<p>✅ Use <strong>autoloads</strong> for persistent game state, scene management, or global services<br>
+✅ Use <strong>scene instancing</strong> for modular, reusable game objects<br>
+✅ Use <strong><code>get_tree().change_scene_to_file()</code></strong> for full transitions<br>
+✅ Avoid storing direct references to nodes from old scenes<br>
 ✅ Keep autoload logic minimal and data-driven</p>
+</div>
 <hr />
-<p>✅ <strong>Next Lesson:</strong> <a href="../resources/">Resources →</a></p>
+<p>✅ <strong>Next Lesson:</strong> <a href="../resources/">Resources</a></p>
 
 
 

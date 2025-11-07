@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/resources/">
+        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/lighting/">
       
       
-        <link rel="prev" href="../autoloads/">
+        <link rel="prev" href="../animation/">
       
-      
-        <link rel="next" href="../input/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Resources - Godot 4.5 Lessons</title>
+        <title>Lighting - Godot 4.5 Lessons</title>
       
     
     
@@ -74,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#resources-in-godot-45" class="md-skip">
+        <a href="#global-illumination-gi-in-godot-45" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Resources
+              Lighting
             
           </span>
         </div>
@@ -337,32 +335,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Resources
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../resources/" class="md-nav__link">
         
   
   
@@ -373,119 +349,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-resource" class="md-nav__link">
-    <span class="md-ellipsis">
-      What is a Resource?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-sharing-data-between-objects" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Sharing Data Between Objects
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#saving-and-loading-data" class="md-nav__link">
-    <span class="md-ellipsis">
-      Saving and Loading Data
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Saving and Loading Data">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-save-a-resource" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Save a Resource
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-load-it-later" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Load it Later
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#alternative-data-formats" class="md-nav__link">
-    <span class="md-ellipsis">
-      Alternative Data Formats
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Alternative Data Formats">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#example-save-custom-data-as-json" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Save Custom Data as JSON
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#load-it-back" class="md-nav__link">
-    <span class="md-ellipsis">
-      Load It Back
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#quick-recap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🧩 Quick Recap
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -541,10 +404,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../lighting/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lighting
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -555,6 +440,170 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-global-illumination" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Is Global Illumination?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#godots-three-gi-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Godot’s Three GI Systems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-lightmapgi-baked-lighting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1️⃣ LightmapGI — Baked Lighting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1️⃣ LightmapGI — Baked Lighting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-voxelgi-real-time-indoor-gi" class="md-nav__link">
+    <span class="md-ellipsis">
+      2️⃣ VoxelGI — Real-Time Indoor GI
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2️⃣ VoxelGI — Real-Time Indoor GI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-settings_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sdfgi-fully-dynamic-global-illumination" class="md-nav__link">
+    <span class="md-ellipsis">
+      3️⃣ SDFGI — Fully Dynamic Global Illumination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ SDFGI — Fully Dynamic Global Illumination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-settings_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Probes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-optimization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging &amp; Optimization Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -594,46 +643,46 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-a-resource" class="md-nav__link">
+  <a href="#what-is-global-illumination" class="md-nav__link">
     <span class="md-ellipsis">
-      What is a Resource?
+      What Is Global Illumination?
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-sharing-data-between-objects" class="md-nav__link">
+  <a href="#godots-three-gi-systems" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Sharing Data Between Objects
+      Godot’s Three GI Systems
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#saving-and-loading-data" class="md-nav__link">
+  <a href="#1-lightmapgi-baked-lighting" class="md-nav__link">
     <span class="md-ellipsis">
-      Saving and Loading Data
+      1️⃣ LightmapGI — Baked Lighting
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Saving and Loading Data">
+    <nav class="md-nav" aria-label="1️⃣ LightmapGI — Baked Lighting">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-save-a-resource" class="md-nav__link">
+  <a href="#setup" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Save a Resource
+      Setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#example-load-it-later" class="md-nav__link">
+  <a href="#key-settings" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Load it Later
+      Key Settings
     </span>
   </a>
   
@@ -645,28 +694,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#alternative-data-formats" class="md-nav__link">
+  <a href="#2-voxelgi-real-time-indoor-gi" class="md-nav__link">
     <span class="md-ellipsis">
-      Alternative Data Formats
+      2️⃣ VoxelGI — Real-Time Indoor GI
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Alternative Data Formats">
+    <nav class="md-nav" aria-label="2️⃣ VoxelGI — Real-Time Indoor GI">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-save-custom-data-as-json" class="md-nav__link">
+  <a href="#setup_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Save Custom Data as JSON
+      Setup
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#load-it-back" class="md-nav__link">
+  <a href="#key-settings_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Load It Back
+      Key Settings
     </span>
   </a>
   
@@ -678,9 +727,60 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-recap" class="md-nav__link">
+  <a href="#3-sdfgi-fully-dynamic-global-illumination" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Quick Recap
+      3️⃣ SDFGI — Fully Dynamic Global Illumination
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3️⃣ SDFGI — Fully Dynamic Global Illumination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setup_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-settings_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Settings
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reflection-probes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reflection Probes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-optimization-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Debugging &amp; Optimization Tools
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -702,167 +802,207 @@
 
 
 
-<h1 id="resources-in-godot-45">Resources in Godot 4.5</h1>
-<p>In Godot, a <strong>Resource</strong> is a reusable data container — a <code>.tres</code> or <code>.res</code> file that stores configuration, data, or assets independently of scenes.<br />
-They’re the building blocks behind <strong>materials</strong>, <strong>animations</strong>, <strong>scripts</strong>, <strong>audio streams</strong>, and even <strong>custom data files</strong> you define.</p>
+<h1 id="global-illumination-gi-in-godot-45">Global Illumination (GI) in Godot 4.5</h1>
 <hr />
-<h2 id="what-is-a-resource">What is a Resource?</h2>
-<p>A <strong>Resource</strong> is any object that inherits from <a href="https://docs.godotengine.org/en/stable/classes/class_resource.html"><code>Resource</code></a>.<br />
-It’s lightweight, serializable, and can be <strong>saved to disk</strong> and <strong>reused</strong> across your project.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example: Creating a custom Resource</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Resource</span>
-<span class="k">class_name</span><span class="w"> </span><span class="n">CharacterStats</span>
-
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">health</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stamina</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
-</code></pre></div>
-<p>You can now save this as <code>character_stats.gd</code> and create <code>.tres</code> files in the editor using <strong>New Resource → CharacterStats</strong>.</p>
+<h2 id="what-is-global-illumination">What Is Global Illumination?</h2>
+<p><strong>Global Illumination (GI)</strong> simulates <em>indirect</em> light — light that bounces off surfaces instead of coming straight from a light source.
+Without GI, dark corners stay black; with GI, they’re softly lit by surrounding surfaces.</p>
 <hr />
-<p>!!!note <strong>Why Resources Exist</strong>
-    Resources help you <strong>separate data from behavior</strong>.</p>
-<div class="highlight"><pre><span></span><code>| Use Case      | Example                                       |
-| ------------- | --------------------------------------------- |
-| Config Data   | Weapon stats, level parameters, game settings |
-| Shared Assets | Materials, sounds, particle effects           |
-| Serialization | Saving/loading custom data                    |
-| Modularity    | Share stats across multiple scenes            |
-</code></pre></div>
+<h2 id="godots-three-gi-systems">Godot’s Three GI Systems</h2>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Type</th>
+<th>Ideal Use Case</th>
+<th>Performance</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1️⃣<strong>LightmapGI</strong></td>
+<td><strong>Baked</strong></td>
+<td>Static indoor scenes</td>
+<td>Fast runtime</td>
+<td>Highest quality, but fixed lighting</td>
+</tr>
+<tr>
+<td>2️⃣<strong>VoxelGI</strong></td>
+<td><strong>Real-Time</strong></td>
+<td>Dynamic indoor scenes</td>
+<td>Medium–High GPU</td>
+<td>Great balance of realism &amp; performance</td>
+</tr>
+<tr>
+<td>3️⃣<strong>SDFGI</strong></td>
+<td><strong>Real-Time</strong></td>
+<td>Large or outdoor worlds</td>
+<td>Heavy GPU</td>
+<td>Fully dynamic, global coverage</td>
+</tr>
+</tbody>
+</table>
 <hr />
-<h2 id="example-sharing-data-between-objects">Example: Sharing Data Between Objects</h2>
-<p>You can assign the same <code>.tres</code> to multiple nodes, so changing one affects all — unless you duplicate it.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># In Player.gd</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="p">:</span><span class="w"> </span><span class="n">CharacterStats</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="p">)</span>
-</code></pre></div>
-<p>If <code>PlayerA</code> and <code>PlayerB</code> share the same <code>stats.tres</code>, editing it in the Inspector affects both.</p>
-<hr />
-<div class="admonition warning">
-<p class="admonition-title"><strong>Runtime Modifications: Persistence Rules</strong></p>
-<p><strong>Editing a Resource at runtime does <em>not</em> automatically save it.</strong>
-Think of <code>.tres</code> files as <em>templates</em> — once loaded, you’re editing the instance in memory.</p>
-<p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="c1"># Works in memory, but doesn&#39;t change the .tres file</span>
-</code></pre></div>
-<p>When the game restarts, the Resource reverts to its original saved values — just like Unity’s assets.</p>
-<p>If you want to persist changes, you must explicitly <strong>save</strong> the resource to disk.</p>
-</div>
-<hr />
-<h2 id="saving-and-loading-data">Saving and Loading Data</h2>
-<p>Godot can save and load resources as <code>.tres</code> (text-based) or <code>.res</code> (binary).
-You can also serialize data in formats like <strong>JSON</strong>, <strong>CSV</strong>, or <strong>custom dictionaries</strong>.</p>
-<h3 id="example-save-a-resource">Example: Save a Resource</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CharacterStats</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span>
-<span class="n">ResourceSaver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stats</span><span class="p">)</span>
-</code></pre></div>
-<h3 id="example-load-it-later">Example: Load it Later</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">loaded_stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">loaded_stats</span><span class="o">.</span><span class="n">health</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="1-lightmapgi-baked-lighting">1️⃣ LightmapGI — Baked Lighting</h2>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title"><strong>Use when:</strong></p>
+<p>Everything is static — walls, furniture, lights.</p>
+</div>
+<p>The scene lighting is computed and stored (baked) into 2D lightmaps on the UV2 channel of the scene objects.</p>
+<h3 id="setup">Setup</h3>
+<ol>
+<li>Add a <strong><code>LightmapGI</code></strong> node.</li>
+<li>Mark meshes as <strong>Static</strong>.</li>
+<li>Set your lights to <strong>Static</strong> or <strong>Mixed</strong>.</li>
+<li>Select the <strong><code>LightmapGI</code></strong> node and click <strong>Bake Lightmaps</strong> on the viewport .</li>
+</ol>
+<h3 id="key-settings">Key Settings</h3>
 <ul>
-<li>Use <code>res://</code> for project files (read-only in exported games).</li>
-<li>Use <code>user://</code> for writable data (player saves, configs).</li>
+<li><strong>Resolution:</strong> Higher = more detail</li>
+<li><strong>Directional Lightmaps:</strong> For better normal mapping</li>
+<li><strong>Denoise / Dilation:</strong> Smooths noise &amp; fills gaps</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Pros &amp; Cons</p>
+<p>✅ Highest quality <br />
+✅ Zero runtime cost<br />
+❌ Static only   <br />
+❌ Long bake times </p>
 </div>
 <hr />
-<h2 id="alternative-data-formats">Alternative Data Formats</h2>
+<h2 id="2-voxelgi-real-time-indoor-gi">2️⃣ VoxelGI — Real-Time Indoor GI</h2>
+<div class="admonition note">
+<p class="admonition-title"><strong>Use when:</strong></p>
+<p>You want moving lights, opening doors, or dynamic objects that affect light.</p>
+</div>
+<p>The scene is <em>voxelized</em> into a 3D grid; light bounces dynamically inside this grid.</p>
+<h3 id="setup_1">Setup</h3>
+<ol>
+<li>Add a <strong><code>VoxelGI</code></strong> node.</li>
+<li>Set its <strong>Extents</strong> to cover your room or area.</li>
+<li>Bake once, or enable live updates.</li>
+<li>Lights should be <strong>Dynamic</strong> or <strong>Mixed</strong>.</li>
+</ol>
+<h3 id="key-settings_1">Key Settings</h3>
+<ul>
+<li><strong>Subdiv:</strong> Grid resolution</li>
+<li><strong>Propagation:</strong> Bounce strength</li>
+<li><strong>Bias:</strong> Reduces light leaks</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title"> Pros &amp; Cons</p>
+<p>✅ Real-time indirect light<br />
+✅ Great for dynamic interiors<br />
+❌ Limited range   <br />
+❌ GPU heavy</p>
+</div>
+<hr />
+<h2 id="3-sdfgi-fully-dynamic-global-illumination">3️⃣ SDFGI — Fully Dynamic Global Illumination</h2>
+<div class="admonition note">
+<p class="admonition-title"><strong>Use when:</strong></p>
+<p>You’re building large open or changing worlds (day/night cycles, moving sun).</p>
+</div>
+<p>The engine generates <strong>Signed Distance Fields (SDFs)</strong> of the scene.
+Dynamic <strong>cascades</strong> around the camera simulate diffuse light everywhere.</p>
+<h3 id="setup_2">Setup</h3>
+<ol>
+<li>In <strong>Project Settings → Rendering → GI</strong>, enable <strong>Use SDFGI</strong>.</li>
+<li>In your <strong><code>WorldEnvironment</code></strong>, enable <strong>SDFGI</strong> under “Environment.”</li>
+</ol>
+<h3 id="key-settings_2">Key Settings</h3>
+<ul>
+<li><strong>Cascade Count:</strong> Affects quality &amp; coverage</li>
+<li><strong>Ray Count:</strong> Sampling quality</li>
+<li><strong>Energy / Bias:</strong> Overall brightness &amp; leak control</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title"> Pros &amp; Cons</p>
+<p>✅ Fully automatic <br />
+✅ Works across large scenes<br />
+❌ Less detail indoors   <br />
+❌ GPU heavy</p>
+</div>
+<hr />
+<h2 id="reflection-probes">Reflection Probes</h2>
+<p>Even with GI, reflections are handled separately.
+Probes <strong>capture local lighting and reflections</strong> to improve realism and add accurate reflections on glossy surfaces.</p>
+<p><strong>Setup:</strong></p>
+<ul>
+<li>Add a <code>ReflectionProbe</code>.</li>
+<li>Adjust its <strong>Extents</strong> to fit your room or area.</li>
+<li>Choose <strong>Update Mode:</strong><blockquote>
+<p><strong>Once:</strong> Baked at load time.<br>
+<strong>Always:</strong> Updates in real time (expensive).</p>
+</blockquote>
+</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>One probe per room is often enough.</li>
+<li>Use larger probes for outdoor zones.</li>
+<li>Combine with <strong>SSR</strong> (Screen-Space Reflections) for small dynamic details.</li>
+</ul>
+</div>
 <table>
 <thead>
 <tr>
-<th>Format</th>
-<th>When to Use</th>
-<th>Example</th>
+<th>Scene Type</th>
+<th>GI System</th>
+<th>Extra Probes</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>JSON</strong></td>
-<td>Interchange or readable player data</td>
-<td><code>JSON.stringify()</code></td>
+<td>🏠 Static indoor</td>
+<td>LightmapGI</td>
+<td>ReflectionProbes</td>
 </tr>
 <tr>
-<td><strong>CSV</strong></td>
-<td>Tables, spreadsheets</td>
-<td>Parsing weapon stats</td>
+<td>🏢 Dynamic indoor</td>
+<td>VoxelGI</td>
+<td>VoxelGI + ReflectionProbes</td>
 </tr>
 <tr>
-<td><strong>ConfigFile</strong></td>
-<td>Lightweight settings</td>
-<td><code>.ini</code> style key-value pairs</td>
+<td>🌳 Outdoor / Open world</td>
+<td>SDFGI</td>
+<td>ReflectionProbes</td>
 </tr>
 <tr>
-<td><strong>Resource</strong></td>
-<td>Rich, typed Godot data</td>
-<td><code>.tres</code>, <code>.res</code></td>
+<td>🌇 Hybrid (e.g., Day/Night)</td>
+<td>SDFGI + LightmapGI</td>
+<td>ReflectionProbes</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h3 id="example-save-custom-data-as-json">Example: Save Custom Data as JSON</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">player_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;health&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;coins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
-<span class="p">}</span>
-
-<span class="k">var</span><span class="w"> </span><span class="n">json_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">player_data</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">WRITE</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">store_string</span><span class="p">(</span><span class="n">json_text</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-<h3 id="load-it-back">Load It Back</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JSON</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">get_as_text</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;health&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1"># → 90</span>
-</code></pre></div>
-<hr />
-<h2 id="quick-recap">🧩 Quick Recap</h2>
-<table>
-<thead>
-<tr>
-<th>Concept</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Resource</td>
-<td>Reusable, serializable data container</td>
-</tr>
-<tr>
-<td><code>.tres</code> / <code>.res</code></td>
-<td>Text vs binary storage</td>
-</tr>
-<tr>
-<td><code>res://</code></td>
-<td>Project assets (read-only)</td>
-</tr>
-<tr>
-<td><code>user://</code></td>
-<td>Writable user data folder</td>
-</tr>
-<tr>
-<td>Persistence</td>
-<td>Must save explicitly</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">Common Pitfalls</p>
+<h2 id="debugging-optimization-tools">Debugging &amp; Optimization Tools</h2>
+<p><strong>Useful Views:</strong></p>
 <ul>
-<li><strong>Modifying shared <code>.tres</code> assets</strong> changes them <em>everywhere</em> they’re used.</li>
-<li><strong>For per-instance data</strong>, use <code>duplicate()</code>:
-<code>gdscript
-    var instance_stats = stats.duplicate()</code></li>
-<li><strong>Never save to <code>res://</code></strong> in exported builds — it’s read-only.</li>
-<li>Always store player data in <code>user://</code>.</li>
+<li>Press <strong>F8 → Rendering Debugger → Lighting → GI / Reflections</strong></li>
+<li>Enable <strong>GI Visualization</strong> to see light bounce volumes, leaks, or cascades.</li>
+</ul>
+<p><strong>Check:</strong></p>
+<ul>
+<li>Probe coverage</li>
+<li>Overlapping volumes</li>
+<li>Light leakage at seams</li>
+</ul>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Key Takeaways</p>
+<ul>
+<li><strong>LightmapGI</strong> → Best quality for static scenes.</li>
+<li><strong>VoxelGI</strong> → Dynamic GI for indoor gameplay.</li>
+<li><strong>SDFGI</strong> → Large, open, or changing worlds.</li>
+<li><strong>ReflectionProbes</strong> → Always pair with GI for realistic reflections.</li>
+<li><strong>Debug visually</strong> — don’t rely on guesswork.</li>
 </ul>
 </div>
-<hr />
-<p>✅ <strong>Next Lesson:</strong> <a href="../input/">Input Handling</a></p>
+<h2 id="references">References</h2>
+<p><a href="https://hexaquo.at/pages/environment-and-light-in-godot-setting-up-for-photorealistic-3d-graphics/">Hexaquo.at - Environment and light in Godot </a><br />
+<a href="https://docs.godotengine.org/en/stable/tutorials/3d/global_illumination/index.html">Godot Docs - Global Illumination</a></p>
 
 
 
