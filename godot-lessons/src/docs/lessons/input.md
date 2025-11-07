@@ -1,12 +1,12 @@
 
-# 🎮 Input Handling in Godot 4.5
+# Input Handling in Godot 4.5
 
 Interactivity begins with **input** — key presses, mouse clicks, or touch events.  
 Godot provides multiple ways to handle input, each suited for different gameplay needs.
 
 ---
 
-## 🎯 What Input Handling Means
+## What Input Handling Means
 
 Godot separates input into **three main layers**:
 
@@ -18,7 +18,7 @@ Each exists to give you control over *when* and *how* input affects gameplay.
 
 ---
 
-## 🧭 1. Polling Inside `_process()`
+## Polling Inside `_process()`
 
 The simplest way to check input is by polling it in the update loop.
 
@@ -40,7 +40,7 @@ Here, every frame we query the **input map** (configured in *Project → Project
 
 ---
 
-## 🖱️ 2. Event-based: `_input(event)`
+## Event-based: `_input(event)`
 
 If you want to respond **once per event**, use `_input(event)`.
 
@@ -64,7 +64,7 @@ This method triggers **every time** an input event occurs (key, mouse, touch, jo
 
 ---
 
-## 🚫 3. `_unhandled_input(event)`
+## `_unhandled_input(event)`
 
 After UI and focused controls process input, Godot sends the leftovers here.
 
@@ -86,7 +86,7 @@ Perfect for *global shortcuts* or *menu escapes* that shouldn’t interfere with
 
 ---
 
-## 🧩 Example: Combining All Three
+## Example: Combining All Three
 
 ```gdscript
 extends CharacterBody2D
@@ -114,19 +114,28 @@ func _unhandled_input(event):
     - `_input()` triggers discrete jumps.
     - `_unhandled_input()` lets the player quit with Escape.
 
+!!! tip
+    For one-shot triggers, use `is_action_just_pressed()` inside `_process()`
+    if you prefer polling style.
+
+!!! warning
+    - Avoid mixing polling and event logic on the same action unless necessary.
+    - `_input()` is called *multiple times per frame* if many events happen quickly.
+    - Don’t forget `event.is_pressed()` — otherwise, you’ll handle both press and release.
+
 ---
 
-## 🧠 4. Input Map Setup
+## Input Map Setup
 
 Add named actions in **Project → Project Settings → Input Map**.
 Example setup:
 
 | Action      | Key / Button |
 | ----------- | ------------ |
-| `ui_left`   | ←            |
-| `ui_right`  | →            |
+| `move_left` | ←            |
+| `move_right`| →            |
 | `jump`      | Space        |
-| `ui_cancel` | Esc          |
+| `quit` | Esc          |
 
 This lets you change controls easily without editing code.
 
@@ -136,7 +145,7 @@ This lets you change controls easily without editing code.
 
 ---
 
-## 🎮 5. Mouse & Touch Events
+## Mouse & Touch Events
 
 Godot treats all input uniformly as `InputEvent` objects.
 
@@ -153,22 +162,10 @@ You can detect other subclasses like:
 * `InputEventJoypadButton`
 * `InputEventScreenTouch`
 
----
-
-## 🪤 Common Pitfalls
-
-!!! warning
-    - Avoid mixing polling and event logic on the same action unless necessary.
-    - `_input()` is called *multiple times per frame* if many events happen quickly.
-    - Don’t forget `event.is_pressed()` — otherwise, you’ll handle both press and release.
-
-!!! tip
-    For one-shot triggers, use `is_action_just_pressed()` inside `_process()`
-    if you prefer polling style.
 
 ---
 
-## 💾 Bonus: Capturing & Releasing the Mouse
+## Capturing & Releasing the Mouse
 
 ```gdscript
 Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -183,7 +180,7 @@ Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 ---
 
-## 🧩 Quick Recap
+## Quick Recap
 
 | Method                    | Purpose         | Typical Use                       |
 | ------------------------- | --------------- | --------------------------------- |
@@ -193,7 +190,7 @@ Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 ---
 
-## 🧠 Mini Challenge
+## Mini Challenge
 
 Create a simple 2D player that:
 
@@ -203,11 +200,4 @@ Create a simple 2D player that:
 
 ---
 
-✅ **Next Lesson:** *Coming soon – Scenes & Instancing*
-
-```
-
----
-
-Would you like me to follow up by writing that **“Scenes & Instancing”** lesson next (same tone, with a couple of toy examples showing packed scenes and instancing at runtime)?
-```
+✅ **Next Lesson:** [Animation](animation.md)

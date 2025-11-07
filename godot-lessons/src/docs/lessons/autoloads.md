@@ -4,8 +4,9 @@
 
 ## What Are Autoloads?
 
-**Autoloads** are **singleton nodes or scripts** that stay loaded across all scenes.
-They’re registered in **Project Settings → Autoload**, and become **global variables** accessible anywhere.
+**Autoloads** are special scripts or scenes in Godot that are loaded automatically when your game starts and remain active for the entire runtime, no matter which scene is currently loaded.
+
+When you register a script or scene as an **autoload** in **Project Settings → Autoload**, it becomes a **singleton**, meaning that there is only one instance of it, and it persists across all scene changes. Each **autoload** is assigned a **global** name, allowing you to access its variables and functions from any script in your project, just like a built-in global variable.
 
 Autoloads are perfect for:
 
@@ -16,7 +17,7 @@ Autoloads are perfect for:
 
 ---
 
-### Example 4: Defining an Autoload Script
+### Example: Defining an Autoload Script
 
 1. Create a new script: `res://globals/game_state.gd`
 
@@ -42,15 +43,15 @@ Now you can use it **anywhere**:
 GameState.add_score(10)
 print(GameState.score)  # works globally!
 ```
-
-✅ `GameState` is loaded once and persists across scene changes.
+!!!note
+    ✅ `GameState` is loaded once and persists across scene changes.
 
 ---
 
-### Example 5: Persistent Nodes via Autoload Scene
+### Example: Persistent Nodes via Autoload Scene
 
 Autoloads can also be full **scenes**, not just scripts.
-This is useful for managers that need nodes (e.g., AudioStreamPlayers).
+This is useful for managers that need nodes ( eg. AudioStreamPlayers ).
 
 1. Create `res://autoloads/audio_manager.tscn`
    Root node: `Node`, with `AudioStreamPlayer` as a child.
@@ -65,19 +66,19 @@ AudioManager.play_sound("res://sounds/jump.wav")
 
 ---
 
-## ⚠️ Pitfalls & Considerations
+!!!warning "Pitfalls & Considerations"
 
-| Pitfall                            | Explanation / Fix                                                                                   |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------- |
-| **Overusing Autoloads**            | Too many globals = hard to maintain. Keep them focused (1 responsibility each).                     |
-| **Changing Scenes Destroys Nodes** | Only Autoloads persist across scene switches.                                                       |
-| **Circular Dependencies**          | Avoid autoloads that depend on each other during `_ready()`. Use deferred calls or signals.         |
-| **Data Persistence**               | Autoload variables reset on restart; for saving, use `ResourceSaver` or JSON (see previous lesson). |
-| **SceneTree confusion**            | After a scene switch, don’t hold stale node references from old scenes.                             |
+    | Pitfall                            | Explanation / Fix                                                                                   |
+    | ---------------------------------- | --------------------------------------------------------------------------------------------------- |
+    | **Overusing Autoloads**            | Too many globals = hard to maintain. Keep them focused (1 responsibility each).                     |
+    | **Changing Scenes Destroys Nodes** | Only Autoloads persist across scene switches.                                                       |
+    | **Circular Dependencies**          | Avoid autoloads that depend on each other during `_ready()`. Use deferred calls or signals.         |
+    | **Data Persistence**               | Autoload variables reset on restart; for saving, use `ResourceSaver` or JSON (see previous lesson). |
+    | **SceneTree confusion**            | After a scene switch, don’t hold stale node references from old scenes.                             |
 
 ---
 
-## Example 6: Combining Scene Management with Autoloads
+## Example: Combining Scene Management with Autoloads
 
 You can centralize scene transitions with a **SceneManager** autoload.
 
@@ -129,20 +130,19 @@ This keeps transitions consistent and reusable.
 
 | Concept                      | Purpose                                                              |
 | ---------------------------- | -------------------------------------------------------------------- |
-| **SceneTree**                | Manages active scenes, nodes, and transitions                        |
-| **`change_scene_to_file()`** | Replace current scene entirely                                       |
-| **Instancing**               | Add one scene as a node inside another                               |
 | **Autoloads**                | Global singletons that persist across scenes                         |
 | **Best Practice**            | Keep autoloads modular (e.g., GameState, AudioManager, SceneManager) |
 
 ---
 
-### 💡 Best Practices
+!!!tip "Best Practices"    
 
-✅ Use **autoloads** for persistent game state, scene management, or global services
-✅ Use **scene instancing** for modular, reusable game objects
-✅ Use **`get_tree().change_scene_to_file()`** for full transitions
-✅ Avoid storing direct references to nodes from old scenes
-✅ Keep autoload logic minimal and data-driven
+    ✅ Use **autoloads** for persistent game state, scene management, or global services<br>
+    ✅ Use **scene instancing** for modular, reusable game objects<br>
+    ✅ Use **`get_tree().change_scene_to_file()`** for full transitions<br>
+    ✅ Avoid storing direct references to nodes from old scenes<br>
+    ✅ Keep autoload logic minimal and data-driven
 
 ---
+
+✅ **Next Lesson:** [Resources](resources.md)

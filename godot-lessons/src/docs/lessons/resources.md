@@ -1,12 +1,12 @@
 
-# 🧩 Lesson: Resources in Godot 4.5
+# Resources in Godot 4.5
 
 In Godot, a **Resource** is a reusable data container — a `.tres` or `.res` file that stores configuration, data, or assets independently of scenes.  
 They’re the building blocks behind **materials**, **animations**, **scripts**, **audio streams**, and even **custom data files** you define.
 
 ---
 
-## 🎯 What is a Resource?
+## What is a Resource?
 
 A **Resource** is any object that inherits from [`Resource`](https://docs.godotengine.org/en/stable/classes/class_resource.html).  
 It’s lightweight, serializable, and can be **saved to disk** and **reused** across your project.
@@ -18,26 +18,25 @@ class_name CharacterStats
 
 @export var health: int = 100
 @export var stamina: int = 50
-````
+```
 
 You can now save this as `character_stats.gd` and create `.tres` files in the editor using **New Resource → CharacterStats**.
 
 ---
 
-## 🧱 Why Resources Exist
+!!!note **Why Resources Exist**
+    Resources help you **separate data from behavior**.
 
-Resources help you **separate data from behavior**.
-
-| Use Case      | Example                                       |
-| ------------- | --------------------------------------------- |
-| Config Data   | Weapon stats, level parameters, game settings |
-| Shared Assets | Materials, sounds, particle effects           |
-| Serialization | Saving/loading custom data                    |
-| Modularity    | Share stats across multiple scenes            |
+    | Use Case      | Example                                       |
+    | ------------- | --------------------------------------------- |
+    | Config Data   | Weapon stats, level parameters, game settings |
+    | Shared Assets | Materials, sounds, particle effects           |
+    | Serialization | Saving/loading custom data                    |
+    | Modularity    | Share stats across multiple scenes            |
 
 ---
 
-## 🧪 Example: Sharing Data Between Objects
+## Example: Sharing Data Between Objects
 
 You can assign the same `.tres` to multiple nodes, so changing one affects all — unless you duplicate it.
 
@@ -53,9 +52,7 @@ If `PlayerA` and `PlayerB` share the same `stats.tres`, editing it in the Inspec
 
 ---
 
-## ⚠️ Runtime Modifications: Persistence Rules
-
-!!! important
+!!! warning "**Runtime Modifications: Persistence Rules**"
     **Editing a Resource at runtime does *not* automatically save it.**
     Think of `.tres` files as *templates* — once loaded, you’re editing the instance in memory.
 
@@ -71,7 +68,7 @@ If `PlayerA` and `PlayerB` share the same `stats.tres`, editing it in the Inspec
 
 ---
 
-## 💾 Saving and Loading Data
+## Saving and Loading Data
 
 Godot can save and load resources as `.tres` (text-based) or `.res` (binary).
 You can also serialize data in formats like **JSON**, **CSV**, or **custom dictionaries**.
@@ -97,7 +94,7 @@ print(loaded_stats.health)
 
 ---
 
-## 🧰 Alternative Data Formats
+## Alternative Data Formats
 
 | Format         | When to Use                         | Example                      |
 | -------------- | ----------------------------------- | ---------------------------- |
@@ -132,19 +129,6 @@ print(data["health"]) # → 90
 
 ---
 
-## 🪤 Common Pitfalls
-
-!!! warning
-    - **Modifying shared `.tres` assets** changes them *everywhere* they’re used.
-    - **For per-instance data**, use `duplicate()`:
-    `gdscript
-        var instance_stats = stats.duplicate()
-        `
-    - **Never save to `res://`** in exported builds — it’s read-only.
-    - Always store player data in `user://`.
-
----
-
 ## 🧩 Quick Recap
 
 | Concept          | Description                           |
@@ -155,20 +139,15 @@ print(data["health"]) # → 90
 | `user://`        | Writable user data folder             |
 | Persistence      | Must save explicitly                  |
 
----
-
-## 🧠 Mini Challenge
-
-Create a custom `WeaponStats` resource with `damage`, `range`, and `cooldown`.
-Save it as `weapon_iron_sword.tres`. Then load and print its damage value in a script.
-
----
-
-✅ **Next Lesson:** [🎮 Input Handling →](input.md)
-
-```
+!!! warning "Common Pitfalls"
+    - **Modifying shared `.tres` assets** changes them *everywhere* they’re used.
+    - **For per-instance data**, use `duplicate()`:
+    `gdscript
+        var instance_stats = stats.duplicate()
+        `
+    - **Never save to `res://`** in exported builds — it’s read-only.
+    - Always store player data in `user://`.
 
 ---
 
-Would you like me to add a **matching `input.md`** file next (same teaching tone and structure: update loop vs event vs unhandled event)? It’ll fit right under this in your `Lessons` nav.
-```
+✅ **Next Lesson:** [Input Handling](input.md)

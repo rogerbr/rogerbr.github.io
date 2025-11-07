@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/demo/">
+        <link rel="canonical" href="https://YOUR_USERNAME.github.io/godot-lessons/lessons/autoloads/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../scene_management/">
       
       
-        <link rel="next" href="../scene_management/">
+        <link rel="next" href="../resources/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Demo - Godot 4.5 Lessons</title>
+        <title>Autoloads - Godot 4.5 Lessons</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#demo-code-highlight-test" class="md-skip">
+        <a href="#autoloads" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Demo
+              Autoloads
             
           </span>
         </div>
@@ -291,39 +291,6 @@
                 
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Demo
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
@@ -347,10 +314,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../autoloads/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Autoloads
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -361,6 +350,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-autoloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Autoloads?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Autoloads?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-defining-an-autoload-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Defining an Autoload Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Persistent Nodes via Autoload Scene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Combining Scene Management with Autoloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,6 +481,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Animation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lighting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -439,6 +554,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-are-autoloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      What Are Autoloads?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What Are Autoloads?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-defining-an-autoload-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Defining an Autoload Script
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Persistent Nodes via Autoload Scene
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: Combining Scene Management with Autoloads
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#toy-exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Toy Exercise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -453,108 +636,162 @@
 
 
 
-<h1 id="demo-code-highlight-test">✨ Demo: Code Highlight Test</h1>
-<p>This page helps verify that <strong>highlight.js</strong> and <strong>highlightjs-gdscript</strong> are working properly with your MkDocs setup.</p>
+<h1 id="autoloads">Autoloads</h1>
 <hr />
-<h1 id="player-color-settings">Player Color Settings</h1>
-<p>The <code>PlayerSettings</code> resource manages cosmetic choices like the player's color.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># There are also two constructs that look like literals, but actually are not:</span>
-<span class="o">$</span><span class="nb nb-Type">NodePath</span><span class="w"> </span><span class="c1"># Shorthand for get_node(&quot;NodePath&quot;)</span>
-<span class="o">$</span><span class="s2">&quot;NodePath&quot;</span>
-<span class="o">$</span><span class="s2">&quot;&quot;&quot;NodePath&quot;&quot;&quot;</span>
-<span class="o">$</span><span class="s1">&#39;&#39;&#39;NodePath&#39;&#39;&#39;</span>
-<span class="o">$</span><span class="s1">&#39;NodePath&#39;</span>
-<span class="o">%</span><span class="n">UniqueNode</span><span class="w"> </span><span class="c1"># Shorthand for get_node(&quot;%UniqueNode&quot;)</span>
-<span class="o">%</span><span class="s2">&quot;UniqueNode&quot;</span>
-<span class="o">%</span><span class="s1">&#39;UniqueNode&#39;</span>
-
-<span class="c1"># player_data.gd</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Resource</span>
-<span class="k">class_name</span><span class="w"> </span><span class="n">PlayerData</span>
-
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player_color</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">WHITE</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">high_score</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">save_data</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
-<span class="w">    </span><span class="c1"># The ResourceSaver handles the serialization</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceSaver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">)</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OK</span><span class="p">:</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Error saving PlayerData: &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">error</span><span class="p">)</span>
-</code></pre></div>
-<p>To load the data, we use the <code>ResourceLoader</code> class.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Short alias &#39;gd&#39; also works!</span>
-<span class="k">func</span><span class="w"> </span><span class="n">load_data</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">PlayerData</span><span class="p">:</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
-<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
-
-<span class="w">    </span><span class="c1"># Return a default instance if no save file exists</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">PlayerData</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-</code></pre></div>
-<h2 id="gdscript-test">🧩 GDScript Test</h2>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody2D</span>
-
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">speed</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">float</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">200.0</span>
-<span class="k">var</span><span class="w"> </span><span class="n">velocity</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
-<span class="w">    </span><span class="n">velocity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_right&quot;</span><span class="p">):</span>
-<span class="w">        </span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;ui_left&quot;</span><span class="p">):</span>
-<span class="w">        </span><span class="n">velocity</span><span class="o">.</span><span class="n">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span>
-
-<span class="w">    </span><span class="n">move_and_slide</span><span class="p">(</span><span class="n">velocity</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_input</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">is_action_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">):</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jump!&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>✅ Expected:</p>
+<h2 id="what-are-autoloads">What Are Autoloads?</h2>
+<p><strong>Autoloads</strong> are special scripts or scenes in Godot that are loaded automatically when your game starts and remain active for the entire runtime, no matter which scene is currently loaded.</p>
+<p>When you register a script or scene as an <strong>autoload</strong> in <strong>Project Settings → Autoload</strong>, it becomes a <strong>singleton</strong>, meaning that there is only one instance of it, and it persists across all scene changes. Each <strong>autoload</strong> is assigned a <strong>global</strong> name, allowing you to access its variables and functions from any script in your project, just like a built-in global variable.</p>
+<p>Autoloads are perfect for:</p>
 <ul>
-<li><code>extends</code>, <code>func</code>, and <code>var</code> keywords are <strong>colored differently</strong></li>
-<li>Strings (<code>"Jump!"</code>) appear as <strong>yellowish or green</strong></li>
-<li>The background is <strong>dark</strong> (if you used <code>atom-one-dark</code> or <code>github-dark</code>)</li>
+<li>global data (e.g., player stats, settings)</li>
+<li>global services (e.g., audio manager, save system)</li>
+<li>scene transitions</li>
+<li>event bus / signal hubs</li>
 </ul>
 <hr />
-<h2 id="json-test">⚙️ JSON Test</h2>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;player&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;health&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;coins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;weapons&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;sword&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bow&quot;</span><span class="p">]</span>
-<span class="w">  </span><span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>✅ Expected:</p>
-<ul>
-<li>Keys (<code>"player"</code>, <code>"health"</code>) should be one color</li>
-<li>Numbers and strings colored distinctly</li>
-</ul>
-<hr />
-<h2 id="gdscript-comments">📝 GDScript + Comments</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># This is a comment</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+<h3 id="example-defining-an-autoload-script">Example: Defining an Autoload Script</h3>
+<ol>
+<li>Create a new script: <code>res://globals/game_state.gd</code></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
 
-<span class="c1"># Test highlighting of types and builtins</span>
-<span class="k">var</span><span class="w"> </span><span class="n">position</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Vector2</span><span class="o">.</span><span class="n">ZERO</span>
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ready with position =&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">)</span>
+<span class="k">var</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="k">var</span><span class="w"> </span><span class="n">player_name</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ada&quot;</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">add_score</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
+<span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span>
 </code></pre></div>
-<p>✅ Expected:</p>
-<ul>
-<li>Comments start with <code>#</code> and are <strong>dim gray or italic</strong></li>
-<li><code>Vector2</code> and <code>print</code> are highlighted as <strong>built-ins</strong></li>
-</ul>
+<ol>
+<li>
+<p>Go to <strong>Project → Project Settings → Autoload</strong></p>
+</li>
+<li>
+<p>Add <code>game_state.gd</code></p>
+</li>
+<li>Set the name to <code>GameState</code></li>
+<li>Click <strong>Add</strong></li>
+</ol>
+<p>Now you can use it <strong>anywhere</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">GameState</span><span class="o">.</span><span class="n">add_score</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">GameState</span><span class="o">.</span><span class="n">score</span><span class="p">)</span><span class="w">  </span><span class="c1"># works globally!</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>✅ <code>GameState</code> is loaded once and persists across scene changes.</p>
+</div>
 <hr />
-<h2 id="other-languages-for-comparison">💡 Other Languages (for comparison)</h2>
-<h3 id="python">Python</h3>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span><span class="p">)</span>
+<h3 id="example-persistent-nodes-via-autoload-scene">Example: Persistent Nodes via Autoload Scene</h3>
+<p>Autoloads can also be full <strong>scenes</strong>, not just scripts.
+This is useful for managers that need nodes ( eg. AudioStreamPlayers ).</p>
+<ol>
+<li>
+<p>Create <code>res://autoloads/audio_manager.tscn</code>
+   Root node: <code>Node</code>, with <code>AudioStreamPlayer</code> as a child.</p>
+</li>
+<li>
+<p>Add it as an <strong>autoload scene</strong> named <code>AudioManager</code>.</p>
+</li>
+</ol>
+<p>Then anywhere:</p>
+<div class="highlight"><pre><span></span><code><span class="n">AudioManager</span><span class="o">.</span><span class="n">play_sound</span><span class="p">(</span><span class="s2">&quot;res://sounds/jump.wav&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h3 id="bash">Bash</h3>
-<div class="highlight"><pre><span></span><code><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This is a shell command&quot;</span>
+<hr />
+<div class="admonition warning">
+<p class="admonition-title">Pitfalls &amp; Considerations</p>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Explanation / Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overusing Autoloads</strong></td>
+<td>Too many globals = hard to maintain. Keep them focused (1 responsibility each).</td>
+</tr>
+<tr>
+<td><strong>Changing Scenes Destroys Nodes</strong></td>
+<td>Only Autoloads persist across scene switches.</td>
+</tr>
+<tr>
+<td><strong>Circular Dependencies</strong></td>
+<td>Avoid autoloads that depend on each other during <code>_ready()</code>. Use deferred calls or signals.</td>
+</tr>
+<tr>
+<td><strong>Data Persistence</strong></td>
+<td>Autoload variables reset on restart; for saving, use <code>ResourceSaver</code> or JSON (see previous lesson).</td>
+</tr>
+<tr>
+<td><strong>SceneTree confusion</strong></td>
+<td>After a scene switch, don’t hold stale node references from old scenes.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr />
+<h2 id="example-combining-scene-management-with-autoloads">Example: Combining Scene Management with Autoloads</h2>
+<p>You can centralize scene transitions with a <strong>SceneManager</strong> autoload.</p>
+<p><strong>scene_manager.gd</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">change_scene</span><span class="p">(</span><span class="n">scene_path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
+<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_file</span><span class="p">(</span><span class="n">scene_path</span><span class="p">)</span>
+
+<span class="k">func</span><span class="w"> </span><span class="n">reload_scene</span><span class="p">():</span>
+<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">current_scene</span><span class="o">.</span><span class="n">scene_file_path</span>
+<span class="w">    </span><span class="n">change_scene</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
 </code></pre></div>
-<p>✅ These are only here to confirm that the global syntax highlighting works across different code blocks.</p>
+<p>Then from any script:</p>
+<div class="highlight"><pre><span></span><code><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>This keeps transitions consistent and reusable.</p>
+<hr />
+<h2 id="toy-exercise">Toy Exercise</h2>
+<p><strong>Goal:</strong> Build a small main menu that switches scenes using an autoload SceneManager.</p>
+<ol>
+<li>Create <code>SceneManager.gd</code> and register it as an autoload.</li>
+<li>In <code>main_menu.gd</code>, connect the Play button:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_on_play_pressed</span><span class="p">():</span>
+<span class="w">    </span><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/game.tscn&quot;</span><span class="p">)</span>
+</code></pre></div>
+3. In <code>game.gd</code>, connect an Exit button:</p>
+<p><div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_on_exit_pressed</span><span class="p">():</span>
+<span class="w">    </span><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/main_menu.tscn&quot;</span><span class="p">)</span>
+</code></pre></div>
+4. Observe how <code>SceneManager</code> stays alive during transitions.</p>
+<hr />
+<h2 id="summary">Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Autoloads</strong></td>
+<td>Global singletons that persist across scenes</td>
+</tr>
+<tr>
+<td><strong>Best Practice</strong></td>
+<td>Keep autoloads modular (e.g., GameState, AudioManager, SceneManager)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<div class="admonition tip">
+<p class="admonition-title">Best Practices</p>
+<p>✅ Use <strong>autoloads</strong> for persistent game state, scene management, or global services<br>
+✅ Use <strong>scene instancing</strong> for modular, reusable game objects<br>
+✅ Use <strong><code>get_tree().change_scene_to_file()</code></strong> for full transitions<br>
+✅ Avoid storing direct references to nodes from old scenes<br>
+✅ Keep autoload logic minimal and data-driven</p>
+</div>
+<hr />
+<p>✅ <strong>Next Lesson:</strong> <a href="../resources/">Resources</a></p>
 
 
 

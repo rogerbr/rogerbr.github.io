@@ -8,7 +8,7 @@ Scene management is how your game **switches between scenes**, **loads/unloads c
 
 ---
 
-### Example 1: Switching Scenes
+### Example: Switching Scenes
 
 ```gdscript
 # main_menu.gd
@@ -18,17 +18,19 @@ func _on_play_button_pressed():
     get_tree().change_scene_to_file("res://scenes/game_scene.tscn")
 ```
 
-* `get_tree()` gives access to the **SceneTree** — Godot’s global runtime manager.
+* `get_tree()` gives access to the **SceneTree**, Godot’s global runtime manager.
 * `change_scene_to_file()` **unloads the current scene** and **loads a new one**.
 
-✅ Simple and clean for scene transitions.
-⚠️ Old scene nodes are **freed** automatically so don’t rely on them after the switch.
+!!!note
+    ✅ Simple and clean for scene transitions.<br>
+    ⚠️ Old scene nodes are **freed** automatically so don’t rely on them after the switch.
 
 ---
 
-### Example 2: Loading a Scene Instance
+### Example: Loading a Scene Instance
 
-Instead of switching, you can **instance** a scene inside another scene:
+Instead of switching to a different scene, you can **instance** a scene inside another scene.
+This will add a copy (instance) of that scene in the current scene:
 
 ```gdscript
 var enemy_scene = preload("res://scenes/enemy.tscn")
@@ -38,11 +40,11 @@ func _ready():
     add_child(enemy)
 ```
 
-This is **scene composition** — reusing scenes like prefabs.
+This is **scene composition**:  reusing scenes like prefabs.
 
 ---
 
-### Example 3: Asynchronous Loading (for large scenes)
+### Example: Asynchronous Loading (for large scenes)
 
 ```gdscript
 func load_next_scene():
@@ -53,19 +55,28 @@ func load_next_scene():
     get_tree().root.add_child(scene)
 ```
 
-✅ Useful for splash screens or streaming levels.
+!!!note
+    ✅ Useful for splash screens or streaming levels.
 
 ---
 
-## Scene Organization Tips
+!!!tip "**Scene Organization Tips**"
 
-| Tip                                                                        | Why                                   |
-| -------------------------------------------------------------------------- | ------------------------------------- |
-| Use folders like `scenes/ui`, `scenes/levels`, `scenes/actors`             | Keeps project structured              |
-| Use consistent root types (e.g., `Node3D` for levels, `Control` for menus) | Easier transitions                    |
-| Keep one **main scene** (e.g., `main.tscn`)                                | Serves as game entry point            |
-| Use **autoloads** for persistent managers                                  | Keeps global state across scene loads |
+    | tip                      | Purpose                                                              |
+    | ---------------------------- | -------------------------------------------------------------------- |
+    | Use folders like `scenes/ui`, `scenes/levels`, `scenes/actors`             | Keeps project structured              |
+    | Use consistent root types (e.g., `Node3D` for levels, `Control` for menus) | Easier transitions                    |
+    | Keep one **main scene** (e.g., `main.tscn`)                                | Serves as game entry point            |
+    | Use **autoloads** for persistent managers                                  | Keeps global state across scene loads |
+
+## Summary
+
+| Concept                      | Purpose                                                              |
+| ---------------------------- | -------------------------------------------------------------------- |
+| **SceneTree**                | Manages active scenes, nodes, and transitions                        |
+| **`change_scene_to_file()`** | Replace current scene entirely                                       |
+| **Instancing**               | Add one scene as a node inside another  
 
 ---
 
-Next
+✅ **Next Lesson:** [Autoloads](autoloads.md)

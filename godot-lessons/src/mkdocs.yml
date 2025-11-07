@@ -22,9 +22,10 @@ markdown_extensions:
 
 nav:
   - Home: index.md
-  - Lessons:
-      - Demo: lessons/demo.md
+  - Lessons:      
       - Scene Mangement: lessons/scene_management.md
       - Autoloads: lessons/autoloads.md
       - Resources: lessons/resources.md
       - Input: lessons/input.md
+      - Animation: lessons/animation.md
+      - Lighting: lessons/lighting.md
