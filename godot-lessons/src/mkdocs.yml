@@ -14,11 +14,32 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
 markdown_extensions:
-  - admonition  
+  - attr_list               # add attributes to markdown elements  
+  - admonition              # notes, warnings, etc.
+  - pymdownx.details        # collapsible sections
   - pymdownx.highlight:      
+      use_pygments: true
+      noclasses: false      
+      #pygments_lang_class: true
+      #auto_title: true
+      anchor_linenums: true
+      #linenums: true      
       linenums_style: pymdownx-inline
-  - pymdownx.superfences 
+      line_spans: __span
+  - pymdownx.keys             # keyboard keys
+  - pymdownx.superfences      # nested fenced code blocks
+  - pymdownx.tabbed:          # tabbed content
+      alternate_style: true   # optional, Material-style tabs
   - tables
+
+plugins:
+  - search 
+  - macros 
+  - custom_lexer
+
+extra_css:
+  - stylesheets/godot/test.css  
+extra_javascript: []
 
 nav:
   - Home: index.md
@@ -33,3 +54,4 @@ nav:
           - Mouse Interactions Raycast: lessons/mouse_raycast.md
       - Animation: lessons/animation.md
       - Lighting: lessons/lighting.md
+      #- CSS Testing: others/gdscript_test.md

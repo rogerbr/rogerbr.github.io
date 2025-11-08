@@ -1,0 +1,2 @@
+[pygments.lexers]
+gdscp = lexer_gdscript.gdscript:GDScriptLexer

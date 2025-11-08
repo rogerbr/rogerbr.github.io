@@ -1,0 +1,9 @@
+setup.py
+lexer_gdscript/__init__.py
+lexer_gdscript/gdscript.py
+lexer_gdscript.egg-info/PKG-INFO
+lexer_gdscript.egg-info/SOURCES.txt
+lexer_gdscript.egg-info/dependency_links.txt
+lexer_gdscript.egg-info/entry_points.txt
+lexer_gdscript.egg-info/requires.txt
+lexer_gdscript.egg-info/top_level.txt

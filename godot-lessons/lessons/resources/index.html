@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/godot/test.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -474,9 +476,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-recap" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Quick Recap
+      Summary
     </span>
   </a>
   
@@ -793,9 +795,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#quick-recap" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      🧩 Quick Recap
+      Summary
     </span>
   </a>
   
@@ -818,39 +820,60 @@
 
 
 <h1 id="resources-in-godot-45">Resources in Godot 4.5</h1>
-<p>In Godot, a <strong>Resource</strong> is a reusable data container — a <code>.tres</code> or <code>.res</code> file that stores configuration, data, or assets independently of scenes.<br />
+<p>In Godot, a <strong>Resource</strong> is a reusable data container, that is, a <code>.tres</code> or <code>.res</code> file that stores configuration, data, or assets independently of scenes.<br />
 They’re the building blocks behind <strong>materials</strong>, <strong>animations</strong>, <strong>scripts</strong>, <strong>audio streams</strong>, and even <strong>custom data files</strong> you define.</p>
 <hr />
 <h2 id="what-is-a-resource">What is a Resource?</h2>
 <p>A <strong>Resource</strong> is any object that inherits from <a href="https://docs.godotengine.org/en/stable/classes/class_resource.html"><code>Resource</code></a>.<br />
 It’s lightweight, serializable, and can be <strong>saved to disk</strong> and <strong>reused</strong> across your project.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Example: Creating a custom Resource</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Resource</span>
-<span class="k">class_name</span><span class="w"> </span><span class="n">CharacterStats</span>
-
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">health</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stamina</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Example: Creating a custom Resource</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">extends</span><span class="w"> </span><span class="nb">Resource</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">class_name</span><span class="w"> </span><span class="nc">CharacterStats</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nd">@export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">health</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">100</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nd">@export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stamina</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">int</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span>
+</span></code></pre></div>
 <p>You can now save this as <code>character_stats.gd</code> and create <code>.tres</code> files in the editor using <strong>New Resource → CharacterStats</strong>.</p>
 <hr />
-<p>!!!note <strong>Why Resources Exist</strong>
-    Resources help you <strong>separate data from behavior</strong>.</p>
-<div class="highlight"><pre><span></span><code>| Use Case      | Example                                       |
-| ------------- | --------------------------------------------- |
-| Config Data   | Weapon stats, level parameters, game settings |
-| Shared Assets | Materials, sounds, particle effects           |
-| Serialization | Saving/loading custom data                    |
-| Modularity    | Share stats across multiple scenes            |
-</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title"><strong>Why Resources Exist</strong></p>
+<p>Resources help you <strong>separate data from behavior</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Config Data</td>
+<td>Weapon stats, level parameters, game settings</td>
+</tr>
+<tr>
+<td>Shared Assets</td>
+<td>Materials, sounds, particle effects</td>
+</tr>
+<tr>
+<td>Serialization</td>
+<td>Saving/loading custom data</td>
+</tr>
+<tr>
+<td>Modularity</td>
+<td>Share stats across multiple scenes</td>
+</tr>
+</tbody>
+</table>
+</div>
 <hr />
 <h2 id="example-sharing-data-between-objects">Example: Sharing Data Between Objects</h2>
 <p>You can assign the same <code>.tres</code> to multiple nodes, so changing one affects all — unless you duplicate it.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># In Player.gd</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="p">:</span><span class="w"> </span><span class="n">CharacterStats</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># In Player.gd</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nd">@export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="p">:</span><span class="w"> </span><span class="nc">CharacterStats</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">_ready</span><span class="p">():</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="nb nb-Function">print</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="vi">health</span><span class="p">)</span>
+</span></code></pre></div>
 <p>If <code>PlayerA</code> and <code>PlayerB</code> share the same <code>stats.tres</code>, editing it in the Inspector affects both.</p>
 <hr />
 <div class="admonition warning">
@@ -858,9 +881,9 @@ It’s lightweight, serializable, and can be <strong>saved to disk</strong> and 
 <p><strong>Editing a Resource at runtime does <em>not</em> automatically save it.</strong>
 Think of <code>.tres</code> files as <em>templates</em> — once loaded, you’re editing the instance in memory.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code><span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="c1"># Works in memory, but doesn&#39;t change the .tres file</span>
-</code></pre></div>
-<p>When the game restarts, the Resource reverts to its original saved values — just like Unity’s assets.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">stats</span><span class="o">.</span><span class="vi">health</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">10</span><span class="w">  </span><span class="c1"># Works in memory, but doesn&#39;t change the .tres file</span>
+</span></code></pre></div>
+<p>When the game restarts, the Resource reverts to its original saved values, just like Unity’s <code>scriptableObjects</code>.</p>
 <p>If you want to persist changes, you must explicitly <strong>save</strong> the resource to disk.</p>
 </div>
 <hr />
@@ -868,14 +891,14 @@ Think of <code>.tres</code> files as <em>templates</em> — once loaded, you’r
 <p>Godot can save and load resources as <code>.tres</code> (text-based) or <code>.res</code> (binary).
 You can also serialize data in formats like <strong>JSON</strong>, <strong>CSV</strong>, or <strong>custom dictionaries</strong>.</p>
 <h3 id="example-save-a-resource">Example: Save a Resource</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CharacterStats</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
-<span class="n">stats</span><span class="o">.</span><span class="n">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span>
-<span class="n">ResourceSaver</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stats</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">var</span><span class="w"> </span><span class="n">stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">CharacterStats</span><span class="o">.</span><span class="nf">new</span><span class="p">()</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">stats</span><span class="o">.</span><span class="vi">health</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">80</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">ResourceSaver</span><span class="o">.</span><span class="nf">save</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">stats</span><span class="p">)</span>
+</span></code></pre></div>
 <h3 id="example-load-it-later">Example: Load it Later</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">loaded_stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">loaded_stats</span><span class="o">.</span><span class="n">health</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">var</span><span class="w"> </span><span class="n">loaded_stats</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ResourceLoader</span><span class="o">.</span><span class="nf">load</span><span class="p">(</span><span class="s2">&quot;user://player_stats.tres&quot;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nb nb-Function">print</span><span class="p">(</span><span class="n">loaded_stats</span><span class="o">.</span><span class="vi">health</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul>
@@ -918,23 +941,23 @@ You can also serialize data in formats like <strong>JSON</strong>, <strong>CSV</
 </table>
 <hr />
 <h3 id="example-save-custom-data-as-json">Example: Save Custom Data as JSON</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">player_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="s2">&quot;health&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
-<span class="w">    </span><span class="s2">&quot;coins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
-<span class="p">}</span>
-
-<span class="k">var</span><span class="w"> </span><span class="n">json_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JSON</span><span class="o">.</span><span class="n">stringify</span><span class="p">(</span><span class="n">player_data</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">WRITE</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">store_string</span><span class="p">(</span><span class="n">json_text</span><span class="p">)</span>
-<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">var</span><span class="w"> </span><span class="n">player_data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="s2">&quot;health&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="s2">&quot;coins&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">}</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="k">var</span><span class="w"> </span><span class="n">json_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="o">.</span><span class="nf">stringify</span><span class="p">(</span><span class="n">player_data</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">FileAccess</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">FileAccess</span><span class="o">.</span><span class="vi">WRITE</span><span class="p">)</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="n">file</span><span class="o">.</span><span class="nf">store_string</span><span class="p">(</span><span class="n">json_text</span><span class="p">)</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="n">file</span><span class="o">.</span><span class="nf">close</span><span class="p">()</span>
+</span></code></pre></div>
 <h3 id="load-it-back">Load It Back</h3>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">FileAccess</span><span class="o">.</span><span class="n">READ</span><span class="p">)</span>
-<span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">JSON</span><span class="o">.</span><span class="n">parse_string</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="n">get_as_text</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;health&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1"># → 90</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">var</span><span class="w"> </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">FileAccess</span><span class="o">.</span><span class="nf">open</span><span class="p">(</span><span class="s2">&quot;user://save.json&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">FileAccess</span><span class="o">.</span><span class="vi">READ</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">var</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="o">.</span><span class="nf">parse_string</span><span class="p">(</span><span class="n">file</span><span class="o">.</span><span class="nf">get_as_text</span><span class="p">())</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb nb-Function">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;health&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1"># → 90</span>
+</span></code></pre></div>
 <hr />
-<h2 id="quick-recap">🧩 Quick Recap</h2>
+<h2 id="summary">Summary</h2>
 <table>
 <thead>
 <tr>

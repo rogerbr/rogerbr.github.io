@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/godot/test.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -927,19 +929,19 @@
 <h2 id="example-playing-a-simple-3d-animation">Example: Playing a Simple 3D Animation</h2>
 <p>You can attach an <code>AnimationPlayer</code> to any Node3D — not just characters.</p>
 <p><strong>Example Scene:</strong></p>
-<div class="highlight"><pre><span></span><code>MovingPlatform (Node3D)
-└── AnimationPlayer
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>MovingPlatform (Node3D)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>└── AnimationPlayer
+</span></code></pre></div>
 <p><strong>Animation:</strong></p>
 <ul>
 <li>Keyframe <code>position.y</code> from 0 → 5 → 0 over 2 seconds</li>
 </ul>
 <p><strong>Code:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="o">$</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;move_up_down&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="o">$</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;move_up_down&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>✅ Works the same as 2D — the animation interpolates transform properties over time.</p>
@@ -948,24 +950,24 @@
 <h2 id="example-character-animation-with-skeleton3d">Example: Character Animation (with Skeleton3D)</h2>
 <p>Most 3D characters are <strong>rigged meshes</strong> controlled by a <strong>Skeleton3D</strong> node.</p>
 <h3 id="typical-structure">Typical Structure</h3>
-<div class="highlight"><pre><span></span><code>Character
-├── Skeleton3D
-├── MeshInstance3D
-└── AnimationPlayer
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Character
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>├── Skeleton3D
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>├── MeshInstance3D
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>└── AnimationPlayer
+</span></code></pre></div>
 <p>When you import a <code>.glb</code> or <code>.fbx</code> from Blender:</p>
 <ul>
 <li>The Skeleton and AnimationPlayer are usually created automatically.</li>
 <li>Each Blender action becomes a separate animation.</li>
 </ul>
 <p>To play an imported animation:</p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody3D</span>
-
-<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">anim_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationPlayer</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="n">anim_player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody3D</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">anim_player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationPlayer</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="n">anim_player</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <hr />
 <h2 id="example-animationtree-for-blending">Example: AnimationTree for Blending</h2>
 <p>For natural movement (idle → walk → run → jump), use <strong>AnimationTree</strong>.</p>
@@ -979,19 +981,19 @@
 <li>Connect transitions in the editor.</li>
 </ol>
 <p><strong>Code Example:</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody3D</span>
-
-<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">anim_tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationTree</span>
-<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">state_machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anim_tree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parameters/playback&quot;</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">is_on_floor</span><span class="p">():</span>
-<span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Jump&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.1</span><span class="p">:</span>
-<span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Run&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">else</span><span class="p">:</span>
-<span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Idle&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">extends</span><span class="w"> </span><span class="n">CharacterBody3D</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">anim_tree</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationTree</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">state_machine</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">anim_tree</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;parameters/playback&quot;</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">func</span><span class="w"> </span><span class="n">_physics_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">is_on_floor</span><span class="p">():</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Jump&quot;</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">elif</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.1</span><span class="p">:</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Run&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Idle&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>✅ Smooth transitions between states, handled visually in the AnimationTree graph.</p>
@@ -1008,8 +1010,8 @@
 <li>X axis: speed (0 = idle, 1 = walk, 3 = run)</li>
 <li>Code control:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">anim_tree</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;parameters/BlendSpace/blend_position&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">anim_tree</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;parameters/BlendSpace/blend_position&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">speed</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>✅ Enables continuous animation transitions based on movement speed.</p>
@@ -1017,50 +1019,50 @@
 <hr />
 <h2 id="example-layered-animation-animationmixer">Example: Layered Animation (AnimationMixer)</h2>
 <p>When you need <strong>simultaneous animations</strong> (e.g., walking + waving), use <code>AnimationMixer</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">mixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationMixer</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="n">mixer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">custom_blend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span>
-<span class="w">    </span><span class="n">mixer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;wave&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">custom_blend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">mixer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">AnimationMixer</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="n">mixer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;walk&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">custom_blend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="n">mixer</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s2">&quot;wave&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">custom_blend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span><span class="w"> </span><span class="n">layer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div>
 <p>Each layer can blend differently, allowing additive animation.</p>
 <hr />
 <h2 id="example-keyframing-custom-properties">Example: Keyframing Custom Properties</h2>
 <p>Animations can also affect script variables and shader parameters.</p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
-<span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="err">@</span><span class="k">export</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">energy</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mf">0.0</span>
+</span></code></pre></div>
 <p>In the Animation panel:</p>
 <ul>
 <li>Add a Property Track → select your node → choose <code>energy</code></li>
 <li>Animate 0 → 1 over 2 seconds</li>
 </ul>
 <p>Then in code:</p>
-<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
-<span class="w">    </span><span class="o">$</span><span class="n">MeshInstance3D</span><span class="o">.</span><span class="n">material_override</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;shader_param/emission_strength&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_process</span><span class="p">(</span><span class="n">delta</span><span class="p">):</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="o">$</span><span class="n">MeshInstance3D</span><span class="o">.</span><span class="n">material_override</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s2">&quot;shader_param/emission_strength&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">energy</span><span class="p">)</span>
+</span></code></pre></div>
 <p>✅ Link animation to gameplay or visual effects.</p>
 <div class="admonition warning">
 <p class="admonition-title">Common Pitfalls &amp; Fixes</p>
-<div class="highlight"><pre><span></span><code>| Issue | Explanation / Fix |
-|--------|-------------------|
-| **Animation not visible** | Ensure your object’s transform or bone is actually keyframed (check the correct node path). |
-| **AnimationTree inactive** | Always toggle the `Active` property. |
-| **Overlapping control** | If AnimationPlayer and AnimationTree modify the same property, the result can conflict. Use one active system at a time. |
-| **Import issues** | Re-importing `.glb` files can overwrite edits. Work with copies or use separate AnimationLibraries. |
-| **Reset values** | Godot does not auto-reset transforms after animations. Add a “Reset” track or manually restore defaults. |
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>| Issue | Explanation / Fix |
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>|--------|-------------------|
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>| **Animation not visible** | Ensure your object’s transform or bone is actually keyframed (check the correct node path). |
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>| **AnimationTree inactive** | Always toggle the `Active` property. |
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>| **Overlapping control** | If AnimationPlayer and AnimationTree modify the same property, the result can conflict. Use one active system at a time. |
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>| **Import issues** | Re-importing `.glb` files can overwrite edits. Work with copies or use separate AnimationLibraries. |
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>| **Reset values** | Godot does not auto-reset transforms after animations. Add a “Reset” track or manually restore defaults. |
+</span></code></pre></div>
 </div>
 <hr />
 <h2 id="example-using-signals">Example: Using Signals</h2>
 <p><code>AnimationPlayer</code> emits several useful signals:</p>
-<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="o">$</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">animation_finished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_on_anim_finished</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_on_anim_finished</span><span class="p">(</span><span class="n">anim_name</span><span class="p">):</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">anim_name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;attack&quot;</span><span class="p">:</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attack complete!&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="o">$</span><span class="n">AnimationPlayer</span><span class="o">.</span><span class="n">animation_finished</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">_on_anim_finished</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">func</span><span class="w"> </span><span class="n">_on_anim_finished</span><span class="p">(</span><span class="n">anim_name</span><span class="p">):</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">anim_name</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;attack&quot;</span><span class="p">:</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Attack complete!&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>✅ Useful for chaining sequences (attack → idle → taunt).</p>
@@ -1083,13 +1085,13 @@ Optional: move them into an <strong>AnimationLibrary</strong> for reuse across s
 <li>Add an <code>AnimationTree</code> with a State Machine.</li>
 <li>Hook up input logic:</li>
 </ol>
-<p><div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">):</span>
-<span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Jump&quot;</span><span class="p">)</span>
-<span class="k">elif</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.1</span><span class="p">:</span>
-<span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Walk&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-<span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Idle&quot;</span><span class="p">)</span>
-</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">if</span><span class="w"> </span><span class="n">Input</span><span class="o">.</span><span class="n">is_action_just_pressed</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">):</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Jump&quot;</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="k">elif</span><span class="w"> </span><span class="n">velocity</span><span class="o">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0.1</span><span class="p">:</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Walk&quot;</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">    </span><span class="n">state_machine</span><span class="o">.</span><span class="n">travel</span><span class="p">(</span><span class="s2">&quot;Idle&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 4. Add an <code>AnimationPlayer</code> signal to print <code>"Jump finished!"</code> when the animation ends.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>

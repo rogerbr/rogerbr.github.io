@@ -1,0 +1,2 @@
+[mkdocs.plugins]
+custom_lexer = mkdocs_custom_lexer.plugin:CustomLexerPlugin

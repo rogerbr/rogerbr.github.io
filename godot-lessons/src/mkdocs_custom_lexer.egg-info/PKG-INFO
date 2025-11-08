@@ -1,0 +1,6 @@
+Metadata-Version: 2.4
+Name: mkdocs_custom_lexer
+Version: 0.1.0
+Requires-Dist: mkdocs
+Requires-Dist: pygments
+Dynamic: requires-dist

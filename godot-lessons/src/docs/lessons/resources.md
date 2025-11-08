@@ -1,7 +1,7 @@
 
 # Resources in Godot 4.5
 
-In Godot, a **Resource** is a reusable data container — a `.tres` or `.res` file that stores configuration, data, or assets independently of scenes.  
+In Godot, a **Resource** is a reusable data container, that is, a `.tres` or `.res` file that stores configuration, data, or assets independently of scenes.  
 They’re the building blocks behind **materials**, **animations**, **scripts**, **audio streams**, and even **custom data files** you define.
 
 ---
@@ -11,7 +11,7 @@ They’re the building blocks behind **materials**, **animations**, **scripts**,
 A **Resource** is any object that inherits from [`Resource`](https://docs.godotengine.org/en/stable/classes/class_resource.html).  
 It’s lightweight, serializable, and can be **saved to disk** and **reused** across your project.
 
-```gdscript
+```gdscp
 # Example: Creating a custom Resource
 extends Resource
 class_name CharacterStats
@@ -24,7 +24,7 @@ You can now save this as `character_stats.gd` and create `.tres` files in the ed
 
 ---
 
-!!!note **Why Resources Exist**
+!!! note "**Why Resources Exist**"
     Resources help you **separate data from behavior**.
 
     | Use Case      | Example                                       |
@@ -40,7 +40,7 @@ You can now save this as `character_stats.gd` and create `.tres` files in the ed
 
 You can assign the same `.tres` to multiple nodes, so changing one affects all — unless you duplicate it.
 
-```gdscript
+```gdscp
 # In Player.gd
 @export var stats: CharacterStats
 
@@ -58,11 +58,11 @@ If `PlayerA` and `PlayerB` share the same `stats.tres`, editing it in the Inspec
 
     Example:
 
-    ```gdscript
+    ```gdscp
     stats.health -= 10  # Works in memory, but doesn't change the .tres file
     ```
 
-    When the game restarts, the Resource reverts to its original saved values — just like Unity’s assets.
+    When the game restarts, the Resource reverts to its original saved values, just like Unity’s `scriptableObjects`.
 
     If you want to persist changes, you must explicitly **save** the resource to disk.
 
@@ -75,7 +75,7 @@ You can also serialize data in formats like **JSON**, **CSV**, or **custom dicti
 
 ### Example: Save a Resource
 
-```gdscript
+```gdscp
 var stats = CharacterStats.new()
 stats.health = 80
 ResourceSaver.save("user://player_stats.tres", stats)
@@ -83,7 +83,7 @@ ResourceSaver.save("user://player_stats.tres", stats)
 
 ### Example: Load it Later
 
-```gdscript
+```gdscp
 var loaded_stats = ResourceLoader.load("user://player_stats.tres")
 print(loaded_stats.health)
 ```
@@ -107,7 +107,7 @@ print(loaded_stats.health)
 
 ### Example: Save Custom Data as JSON
 
-```gdscript
+```gdscp
 var player_data = {
     "health": 90,
     "coins": 42
@@ -121,7 +121,7 @@ file.close()
 
 ### Load It Back
 
-```gdscript
+```gdscp
 var file = FileAccess.open("user://save.json", FileAccess.READ)
 var data = JSON.parse_string(file.get_as_text())
 print(data["health"]) # → 90
@@ -129,7 +129,7 @@ print(data["health"]) # → 90
 
 ---
 
-## 🧩 Quick Recap
+## Summary
 
 | Concept          | Description                           |
 | ---------------- | ------------------------------------- |
