@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/godot/test.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -373,10 +375,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What Are Autoloads?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-defining-an-autoload-script" class="md-nav__link">
     <span class="md-ellipsis">
       Example: Defining an Autoload Script
@@ -384,11 +385,39 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
     <span class="md-ellipsis">
       Example: Persistent Nodes via Autoload Scene
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Persistent Nodes via Autoload Scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scene-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-as-an-autoload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register as an Autoload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-anywhere-in-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use anywhere in your game
     </span>
   </a>
   
@@ -400,18 +429,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
+  <a href="#example-using-autoload-as-an-event-bus" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Combining Scene Management with Autoloads
+      Example: Using Autoload as an Event Bus
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#toy-exercise" class="md-nav__link">
+  <a href="#example-scenemanager-autoload" class="md-nav__link">
     <span class="md-ellipsis">
-      Toy Exercise
+      Example: SceneManager Autoload
     </span>
   </a>
   
@@ -642,6 +671,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/gdscript_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CSS Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -682,10 +734,9 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="What Are Autoloads?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#example-defining-an-autoload-script" class="md-nav__link">
     <span class="md-ellipsis">
       Example: Defining an Autoload Script
@@ -693,11 +744,39 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#example-persistent-nodes-via-autoload-scene" class="md-nav__link">
     <span class="md-ellipsis">
       Example: Persistent Nodes via Autoload Scene
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Persistent Nodes via Autoload Scene">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scene-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene setup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#register-as-an-autoload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Register as an Autoload
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-anywhere-in-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use anywhere in your game
     </span>
   </a>
   
@@ -709,18 +788,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-combining-scene-management-with-autoloads" class="md-nav__link">
+  <a href="#example-using-autoload-as-an-event-bus" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Combining Scene Management with Autoloads
+      Example: Using Autoload as an Event Bus
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#toy-exercise" class="md-nav__link">
+  <a href="#example-scenemanager-autoload" class="md-nav__link">
     <span class="md-ellipsis">
-      Toy Exercise
+      Example: SceneManager Autoload
     </span>
   </a>
   
@@ -755,27 +834,27 @@
 <hr />
 <h2 id="what-are-autoloads">What Are Autoloads?</h2>
 <p><strong>Autoloads</strong> are special scripts or scenes in Godot that are loaded automatically when your game starts and remain active for the entire runtime, no matter which scene is currently loaded.</p>
-<p>When you register a script or scene as an <strong>autoload</strong> in <strong>Project Settings → Autoload</strong>, it becomes a <strong>singleton</strong>, meaning that there is only one instance of it, and it persists across all scene changes. Each <strong>autoload</strong> is assigned a <strong>global</strong> name, allowing you to access its variables and functions from any script in your project, just like a built-in global variable.</p>
-<p>Autoloads are perfect for:</p>
+<p>When you register a script or scene as an <strong>autoload</strong> in <strong>Project Settings → Autoload</strong>, it becomes a <strong>singleton</strong>, meaning that there is only one instance of it, and it persists across all scene changes. </p>
+<p>Each <strong>autoload</strong> is assigned a <strong>global</strong> name, allowing you to access its variables and functions from any script in your project, just like a built-in global variable. Autoloads are perfect for:</p>
 <ul>
-<li>global data (e.g., player stats, settings)</li>
-<li>global services (e.g., audio manager, save system)</li>
-<li>scene transitions</li>
-<li>event bus / signal hubs</li>
+<li>Global data (player stats, settings)</li>
+<li>Global services (audio manager, save system)</li>
+<li>Scene transitions</li>
+<li>Event bus / global signals</li>
 </ul>
 <hr />
-<h3 id="example-defining-an-autoload-script">Example: Defining an Autoload Script</h3>
+<h2 id="example-defining-an-autoload-script">Example: Defining an Autoload Script</h2>
 <ol>
 <li>Create a new script: <code>res://globals/game_state.gd</code></li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
-
-<span class="k">var</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
-<span class="k">var</span><span class="w"> </span><span class="n">player_name</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ada&quot;</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">add_score</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
-<span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">extends</span><span class="w"> </span><span class="nb">Node</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">var</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">var</span><span class="w"> </span><span class="n">player_name</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Ada&quot;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">add_score</span><span class="p">(</span><span class="n">amount</span><span class="p">):</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="n">score</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">amount</span>
+</span></code></pre></div>
 <ol>
 <li>
 <p>Go to <strong>Project → Project Settings → Autoload</strong></p>
@@ -783,99 +862,128 @@
 <li>
 <p>Add <code>game_state.gd</code></p>
 </li>
-<li>Set the name to <code>GameState</code></li>
+<li>Set name to <code>GameState</code></li>
 <li>Click <strong>Add</strong></li>
 </ol>
-<p>Now you can use it <strong>anywhere</strong>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">GameState</span><span class="o">.</span><span class="n">add_score</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">GameState</span><span class="o">.</span><span class="n">score</span><span class="p">)</span><span class="w">  </span><span class="c1"># works globally!</span>
-</code></pre></div>
+<p>Now <code>GameState</code> can be used <strong>anywhere</strong>, no need to load or instance it manually:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nc">GameState</span><span class="o">.</span><span class="nf">add_score</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb nb-Function">print</span><span class="p">(</span><span class="nc">GameState</span><span class="o">.</span><span class="vi">score</span><span class="p">)</span><span class="w">  </span><span class="c1"># works globally!</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>✅ <code>GameState</code> is loaded once and persists across scene changes.</p>
+<p>✅ Autoloads persist across all scene changes.<br>
+⚙️ <strong>Order matters:</strong> They’re initialized top-to-bottom in the Project Settings list.</p>
 </div>
 <hr />
-<h3 id="example-persistent-nodes-via-autoload-scene">Example: Persistent Nodes via Autoload Scene</h3>
-<p>Autoloads can also be full <strong>scenes</strong>, not just scripts.
-This is useful for managers that need nodes ( eg. AudioStreamPlayers ).</p>
-<ol>
-<li>
-<p>Create <code>res://autoloads/audio_manager.tscn</code>
-   Root node: <code>Node</code>, with <code>AudioStreamPlayer</code> as a child.</p>
-</li>
-<li>
-<p>Add it as an <strong>autoload scene</strong> named <code>AudioManager</code>.</p>
-</li>
-</ol>
-<p>Then anywhere:</p>
-<div class="highlight"><pre><span></span><code><span class="n">AudioManager</span><span class="o">.</span><span class="n">play_sound</span><span class="p">(</span><span class="s2">&quot;res://sounds/jump.wav&quot;</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="example-persistent-nodes-via-autoload-scene">Example: Persistent Nodes via Autoload Scene</h2>
+<p>Sometimes you need an <code>autoload</code> that’s more than just a script. For example, a system that plays sounds, spawns objects, or manages cameras.
+In those cases, you can make the <code>autoload</code> a scene instead of a plain script.</p>
+<p>This allows the <code>autoload</code> to include real nodes (like <code>AudioStreamPlayer</code>, <code>Timer</code>, or <code>Camera3D</code>) that are always present in the running game, even when scenes change.</p>
+<p>It’s a simple way to keep important runtime components, such as audio or UI managers, persistent and globally accessible.</p>
+<p>Let's create a simple audio manager as an example. </p>
+<h3 id="scene-setup">Scene setup</h3>
+<p>Create a scene at <code>res://autoloads/audio_manager.tscn</code> with the following node structure: </p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>audio_manager.tscn
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>└── Node (root)
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    └── AudioStreamPlayer
+</span></code></pre></div>
+<p>Attach the following script to the <strong>root node</strong>:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># res://autoloads/audio_manager.gd</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">extends</span><span class="w"> </span><span class="nb">Node</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nd">@onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">player</span><span class="p">:</span><span class="w"> </span><span class="nb">AudioStreamPlayer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sx">$AudioStreamPlayer</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># A dictionary of sound files </span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="k">var</span><span class="w"> </span><span class="n">sounds</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="s2">&quot;jump&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;res://sounds/jump.wav&quot;</span><span class="p">,</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">    </span><span class="s2">&quot;click&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;res://sounds/ui_click.wav&quot;</span><span class="p">,</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">    </span><span class="s2">&quot;explosion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;res://sounds/explosion.wav&quot;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">}</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">play_sound</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span><span class="w"> </span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="w">    </span><span class="c1"># we check if the name exists in our dictionary</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="c1"># exit if it doesn&#39;t</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="w">    </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">sounds</span><span class="o">.</span><span class="nf">has</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a><span class="w">        </span><span class="nb nb-Function">push_warning</span><span class="p">(</span><span class="s2">&quot;Unknown sound: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a><span class="w">        </span><span class="k k-ControlFlow">return</span><span class="w">                  </span>
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>
+</span><span id="__span-3-21"><a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a><span class="w">    </span><span class="c1"># try to load the sound and verify it was loaded</span>
+</span><span id="__span-3-22"><a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">stream</span><span class="p">:</span><span class="w"> </span><span class="nb">AudioStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Function">load</span><span class="p">(</span><span class="n">sounds</span><span class="p">[</span><span class="n">name</span><span class="p">])</span><span class="w">                    </span>
+</span><span id="__span-3-23"><a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a><span class="w">    </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">stream</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="l">null</span><span class="p">:</span><span class="w"> </span>
+</span><span id="__span-3-24"><a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a><span class="w">        </span><span class="nb nb-Function">push_warning</span><span class="p">(</span><span class="s2">&quot;Could not load sound: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">sounds</span><span class="p">[</span><span class="n">name</span><span class="p">])</span>
+</span><span id="__span-3-25"><a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a><span class="w">        </span><span class="k k-ControlFlow">return</span>
+</span><span id="__span-3-26"><a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>
+</span><span id="__span-3-27"><a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a><span class="w">    </span><span class="c1"># set the sound in the player and play it</span>
+</span><span id="__span-3-28"><a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a><span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="vi">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">stream</span><span class="w">  </span>
+</span><span id="__span-3-29"><a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a><span class="w">    </span><span class="n">player</span><span class="o">.</span><span class="nf">play</span><span class="p">()</span><span class="w">           </span>
+</span></code></pre></div>
+<h3 id="register-as-an-autoload">Register as an Autoload</h3>
+<p>Open <strong>Project → Project Settings → Autoload</strong></p>
+<ul>
+<li>Path: <code>res://autoloads/audio_manager.tscn</code></li>
+<li>Name: <code>AudioManager</code></li>
+<li>Click <strong>Add</strong></li>
+</ul>
+<h3 id="use-anywhere-in-your-game">Use anywhere in your game</h3>
+<p>In <strong>any script</strong>, simply call:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nc">AudioManager</span><span class="o">.</span><span class="nf">play_sound</span><span class="p">(</span><span class="s2">&quot;jump&quot;</span><span class="p">)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nc">AudioManager</span><span class="o">.</span><span class="nf">play_sound</span><span class="p">(</span><span class="s2">&quot;click&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>✅ That’s it! Now <code>AudioManager</code> will always exist at runtime. No need to instance, load, or reference anything else.</p>
 <hr />
-<div class="admonition warning">
-<p class="admonition-title">Pitfalls &amp; Considerations</p>
-<table>
-<thead>
-<tr>
-<th>Pitfall</th>
-<th>Explanation / Fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Overusing Autoloads</strong></td>
-<td>Too many globals = hard to maintain. Keep them focused (1 responsibility each).</td>
-</tr>
-<tr>
-<td><strong>Changing Scenes Destroys Nodes</strong></td>
-<td>Only Autoloads persist across scene switches.</td>
-</tr>
-<tr>
-<td><strong>Circular Dependencies</strong></td>
-<td>Avoid autoloads that depend on each other during <code>_ready()</code>. Use deferred calls or signals.</td>
-</tr>
-<tr>
-<td><strong>Data Persistence</strong></td>
-<td>Autoload variables reset on restart; for saving, use <code>ResourceSaver</code> or JSON (see previous lesson).</td>
-</tr>
-<tr>
-<td><strong>SceneTree confusion</strong></td>
-<td>After a scene switch, don’t hold stale node references from old scenes.</td>
-</tr>
-</tbody>
-</table>
+<h2 id="example-using-autoload-as-an-event-bus">Example: Using Autoload as an Event Bus</h2>
+<p>ometimes different parts of your game need to communicate without directly referencing each other.
+For example, when an enemy dies and multiple systems (UI, score, and audio) all need to react.</p>
+<p>Instead of passing node references or using long node paths, you can create an autoload as a global signal hub.
+This pattern is called an <code>Event Bus</code> : a single place where you define and emit signals that any script in the project can listen to.</p>
+<p>It keeps your code decoupled, that is, scenes can react to events without needing to know who sent them.</p>
+<p>Let’s create a very minimal signal hub:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># event_bus.gd  - Register as Autoload</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">extends</span><span class="w"> </span><span class="nb">Node</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">signal</span><span class="w"> </span><span class="n">enemy_defeated</span>
+</span></code></pre></div>
+<p>Then in any scene, you can connect a function to the event ( add a listener )</p>
+<div class="highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nc">EventBus</span><span class="o">.</span><span class="vi">enemy_defeated</span><span class="o">.</span><span class="nf">connect</span><span class="p">(</span><span class="n">_on_enemy_defeated</span><span class="p">)</span>
+</span></code></pre></div>
+<p>or Emit the signal from anywhere:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nc">EventBus</span><span class="o">.</span><span class="vi">enemy_defeated</span><span class="o">.</span><span class="nf">emit</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Why it’s powerful</p>
+<p>The <code>Event Bus Pattern</code>  let's you plug systems together freely: For example, the UI can update the score, AudioManager can play a sound, and GameState can track progress, all reacting to the same event without tightly coupling those systems.</p>
 </div>
 <hr />
-<h2 id="example-combining-scene-management-with-autoloads">Example: Combining Scene Management with Autoloads</h2>
-<p>You can centralize scene transitions with a <strong>SceneManager</strong> autoload.</p>
-<p><strong>scene_manager.gd</strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">change_scene</span><span class="p">(</span><span class="n">scene_path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
-<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_file</span><span class="p">(</span><span class="n">scene_path</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">reload_scene</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">current_scene</span><span class="o">.</span><span class="n">scene_file_path</span>
-<span class="w">    </span><span class="n">change_scene</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
-</code></pre></div>
-<p>Then from any script:</p>
-<div class="highlight"><pre><span></span><code><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span>
-</code></pre></div>
-<p>This keeps transitions consistent and reusable.</p>
-<hr />
-<h2 id="toy-exercise">Toy Exercise</h2>
-<p><strong>Goal:</strong> Build a small main menu that switches scenes using an autoload SceneManager.</p>
-<ol>
-<li>Create <code>SceneManager.gd</code> and register it as an autoload.</li>
-<li>In <code>main_menu.gd</code>, connect the Play button:</li>
-</ol>
-<p><div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_on_play_pressed</span><span class="p">():</span>
-<span class="w">    </span><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/game.tscn&quot;</span><span class="p">)</span>
-</code></pre></div>
-3. In <code>game.gd</code>, connect an Exit button:</p>
-<p><div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_on_exit_pressed</span><span class="p">():</span>
-<span class="w">    </span><span class="n">SceneManager</span><span class="o">.</span><span class="n">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/main_menu.tscn&quot;</span><span class="p">)</span>
-</code></pre></div>
-4. Observe how <code>SceneManager</code> stays alive during transitions.</p>
+<h2 id="example-scenemanager-autoload">Example: SceneManager Autoload</h2>
+<p>As your project grows, it’s best to centralize scene transitions in one place rather than scattering <code>get_tree().change_scene_to_file()</code> calls everywhere.
+An autoload <code>SceneManager</code> makes your scene switching code reusable, cleaner, and easier to maintain.</p>
+<p>Let's create a minimal <code>SceneManager</code> implementation:</p>
+<ul>
+<li>
+<p>Create a new script:
+res://autoloads/scene_manager.gd</p>
+</li>
+<li>
+<p>Register it as an autoload named SceneManager.</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># scene_manager.gd</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">extends</span><span class="w"> </span><span class="nb">Node</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">change_scene</span><span class="p">(</span><span class="n">scene_path</span><span class="p">:</span><span class="w"> </span><span class="nb nb-Type">String</span><span class="p">):</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">change_scene_to_file</span><span class="p">(</span><span class="n">scene_path</span><span class="p">)</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">error</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">OK</span><span class="p">:</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">        </span><span class="nb nb-Function">push_warning</span><span class="p">(</span><span class="s2">&quot;Failed to load scene: </span><span class="si">%s</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">scene_path</span><span class="p">)</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">reload_scene</span><span class="p">():</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">current_scene</span><span class="w"> </span><span class="p">:</span><span class="o">=</span><span class="w"> </span><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="vi">current_scene</span>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">    </span><span class="k k-ControlFlow">if</span><span class="w"> </span><span class="n">current_scene</span><span class="p">:</span>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">        </span><span class="nf">change_scene</span><span class="p">(</span><span class="n">current_scene</span><span class="o">.</span><span class="vi">scene_file_path</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Use it anywhere in your project:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nc">SceneManager</span><span class="o">.</span><span class="nf">change_scene</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>✅ Keeps transitions clean, reusable, and centralized.</p>
 <hr />
 <h2 id="summary">Summary</h2>
 <table>
@@ -891,12 +999,23 @@ This is useful for managers that need nodes ( eg. AudioStreamPlayers ).</p>
 <td>Global singletons that persist across scenes</td>
 </tr>
 <tr>
-<td><strong>Best Practice</strong></td>
-<td>Keep autoloads modular (e.g., GameState, AudioManager, SceneManager)</td>
+<td><strong>Script Autoloads</strong></td>
+<td>Logic-only globals (e.g., GameState, SceneManager)</td>
+</tr>
+<tr>
+<td><strong>Scene Autoloads</strong></td>
+<td>Persistent nodes (e.g., AudioManager)</td>
+</tr>
+<tr>
+<td><strong>Event Bus</strong></td>
+<td>Central hub for global signals</td>
+</tr>
+<tr>
+<td><strong>Initialization Order</strong></td>
+<td>Follows list order in Project Settings</td>
 </tr>
 </tbody>
 </table>
-<hr />
 <div class="admonition tip">
 <p class="admonition-title">Best Practices</p>
 <p>✅ Use <strong>autoloads</strong> for persistent game state, scene management, or global services<br>
@@ -904,6 +1023,39 @@ This is useful for managers that need nodes ( eg. AudioStreamPlayers ).</p>
 ✅ Use <strong><code>get_tree().change_scene_to_file()</code></strong> for full transitions<br>
 ✅ Avoid storing direct references to nodes from old scenes<br>
 ✅ Keep autoload logic minimal and data-driven</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Pitfalls &amp; Considerations</p>
+<table>
+<thead>
+<tr>
+<th>Pitfall</th>
+<th>Explanation / Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Overusing Autoloads</strong></td>
+<td>Too many globals = hard to maintain. Keep each focused on one responsibility.</td>
+</tr>
+<tr>
+<td><strong>Changing Scenes Destroys Nodes</strong></td>
+<td>Only Autoloads persist across scene switches.</td>
+</tr>
+<tr>
+<td><strong>Circular Dependencies</strong></td>
+<td>Avoid autoloads that depend on each other during <code>_ready()</code>. Use deferred calls or signals.</td>
+</tr>
+<tr>
+<td><strong>Data Persistence</strong></td>
+<td>Autoload variables reset on restart; for saving, use <code>ResourceSaver</code> or JSON.</td>
+</tr>
+<tr>
+<td><strong>Initialization Order</strong></td>
+<td>Autoloads initialize top-to-bottom in the list. Adjust if one depends on another.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <hr />
 <p>✅ <strong>Next Lesson:</strong> <a href="../resources/">Resources</a></p>

@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/godot/test.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -344,37 +346,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scene-management-controlling-whats-loaded" class="md-nav__link">
+  <a href="#scene-management-controlling-whats-running" class="md-nav__link">
     <span class="md-ellipsis">
-      Scene Management = Controlling What’s Loaded
+      Scene Management = Controlling What’s Running
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Loaded">
+    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Running">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-switching-scenes" class="md-nav__link">
+  <a href="#the-scenetree-at-runtime" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Switching Scenes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-a-scene-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Loading a Scene Instance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-asynchronous-loading-for-large-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Asynchronous Loading (for large scenes)
+      The SceneTree at Runtime
     </span>
   </a>
   
@@ -382,6 +366,66 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-entire-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Entire Scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching Entire Scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preloading-for-instant-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preloading for Instant Transitions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instancing-scenes-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instancing Scenes (Composition)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-loading-of-large-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Loading of Large Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-scene-stack-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced: Scene Stack (4.3+)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-organization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Organization Tips
+    </span>
+  </a>
   
 </li>
       
@@ -633,6 +677,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/gdscript_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CSS Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -667,37 +734,19 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#scene-management-controlling-whats-loaded" class="md-nav__link">
+  <a href="#scene-management-controlling-whats-running" class="md-nav__link">
     <span class="md-ellipsis">
-      Scene Management = Controlling What’s Loaded
+      Scene Management = Controlling What’s Running
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Loaded">
+    <nav class="md-nav" aria-label="Scene Management = Controlling What’s Running">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#example-switching-scenes" class="md-nav__link">
+  <a href="#the-scenetree-at-runtime" class="md-nav__link">
     <span class="md-ellipsis">
-      Example: Switching Scenes
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-loading-a-scene-instance" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Loading a Scene Instance
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#example-asynchronous-loading-for-large-scenes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example: Asynchronous Loading (for large scenes)
+      The SceneTree at Runtime
     </span>
   </a>
   
@@ -705,6 +754,66 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#switching-entire-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Switching Entire Scenes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Switching Entire Scenes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preloading-for-instant-transitions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preloading for Instant Transitions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instancing-scenes-composition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instancing Scenes (Composition)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asynchronous-loading-of-large-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Asynchronous Loading of Large Scenes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-scene-stack-43" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced: Scene Stack (4.3+)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scene-organization-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scene Organization Tips
+    </span>
+  </a>
   
 </li>
       
@@ -733,81 +842,130 @@
 
 
 
-<h1 id="scene-management">Scene Management</h1>
+<h1 id="scene-management">🎬 Scene Management</h1>
 <hr />
-<h2 id="scene-management-controlling-whats-loaded">Scene Management = Controlling What’s Loaded</h2>
-<p>Scene management is how your game <strong>switches between scenes</strong>, <strong>loads/unloads content</strong>, and <strong>keeps track of what’s currently active</strong>.</p>
-<hr />
-<h3 id="example-switching-scenes">Example: Switching Scenes</h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># main_menu.gd</span>
-<span class="k">extends</span><span class="w"> </span><span class="n">Control</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_on_play_button_pressed</span><span class="p">():</span>
-<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">change_scene_to_file</span><span class="p">(</span><span class="s2">&quot;res://scenes/game_scene.tscn&quot;</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="scene-management-controlling-whats-running">Scene Management = Controlling What’s Running</h2>
+<p><strong>Scene management</strong> is how your game decides</p>
 <ul>
-<li><code>get_tree()</code> gives access to the <strong>SceneTree</strong>, Godot’s global runtime manager.</li>
-<li><code>change_scene_to_file()</code> <strong>unloads the current scene</strong> and <strong>loads a new one</strong>.</li>
+<li><em>what’s currently active</em>,</li>
+<li><em>when to switch to something else</em>, and</li>
+<li><em>what to keep loaded across scenes.</em></li>
+</ul>
+<p>Everything in Godot runs inside the <strong>SceneTree</strong>, the structure that keeps track of all active nodes.</p>
+<hr />
+<h3 id="the-scenetree-at-runtime">The SceneTree at Runtime</h3>
+<p><div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SceneTree
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> ├─ Main Scene (game.tscn)
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a> │   ├─ Player
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> │   ├─ UI
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a> │   └─ Enemies
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> └─ Autoloads 
+</span></code></pre></div>
+Think of the SceneTree as your game’s <em>live hierarchy</em> : Every <code>.tscn</code> file you open or instantiate becomes a branch in this tree.</p>
+<hr />
+<h2 id="switching-entire-scenes">Switching Entire Scenes</h2>
+<p>The simplest form of scene management is <strong>replacing</strong> the current scene with another.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">var</span><span class="w"> </span><span class="n">scene_path</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://scenes/game_scene.tscn&quot;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">change_scene_to_file</span><span class="p">(</span><span class="n">scene_path</span><span class="p">)</span>
+</span></code></pre></div>
+<ul>
+<li><code>get_tree()</code> gives access to the <strong>SceneTree</strong>, the global runtime manager.</li>
+<li><code>change_scene_to_file()</code> <strong>unloads the current scene</strong> and <strong>loads the new one</strong>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>✅ Simple and clean for scene transitions.<br>
-⚠️ Old scene nodes are <strong>freed</strong> automatically so don’t rely on them after the switch.</p>
+<p>✅ Simple and clean for transitions.<br />
+⚠️ All nodes in the old scene are <strong>freed</strong> automatically — you cannot reference them after switching.</p>
 </div>
 <hr />
-<h3 id="example-loading-a-scene-instance">Example: Loading a Scene Instance</h3>
-<p>Instead of switching to a different scene, you can <strong>instance</strong> a scene inside another scene.
-This will add a copy (instance) of that scene in the current scene:</p>
-<div class="highlight"><pre><span></span><code><span class="k">var</span><span class="w"> </span><span class="n">enemy_scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">preload</span><span class="p">(</span><span class="s2">&quot;res://scenes/enemy.tscn&quot;</span><span class="p">)</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_ready</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">enemy_scene</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
-<span class="w">    </span><span class="n">add_child</span><span class="p">(</span><span class="n">enemy</span><span class="p">)</span>
-</code></pre></div>
-<p>This is <strong>scene composition</strong>:  reusing scenes like prefabs.</p>
+<h3 id="preloading-for-instant-transitions">Preloading for Instant Transitions</h3>
+<p>You can also <strong>preload</strong> the next scene for faster switching:</p>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">var</span><span class="w"> </span><span class="n">next_scene</span><span class="p">:</span><span class="nb">PackedScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Function">preload</span><span class="p">(</span><span class="s2">&quot;res://scenes/game_scene.tscn&quot;</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">change_scene_to_packed</span><span class="p">(</span><span class="n">next_scene</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This uses a <strong>PackedScene</strong> already loaded in memory → prevents a small pause during scene transitions.</p>
 <hr />
-<h3 id="example-asynchronous-loading-for-large-scenes">Example: Asynchronous Loading (for large scenes)</h3>
-<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">load_next_scene</span><span class="p">():</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">loader</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_request</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span>
-<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get_status</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">THREAD_LOAD_LOADED</span><span class="p">:</span>
-<span class="w">        </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">process_frame</span><span class="w">  </span><span class="c1"># keep UI responsive</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">scene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ResourceLoader</span><span class="o">.</span><span class="n">load_threaded_get</span><span class="p">(</span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">instantiate</span><span class="p">()</span>
-<span class="w">    </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">root</span><span class="o">.</span><span class="n">add_child</span><span class="p">(</span><span class="n">scene</span><span class="p">)</span>
-</code></pre></div>
+<h2 id="instancing-scenes-composition">Instancing Scenes (Composition)</h2>
+<p>Instead of switching away, you can <strong>add a scene as a node</strong> inside another, like a prefab.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">var</span><span class="w"> </span><span class="n">scene</span><span class="p">:</span><span class="nb">PackedScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Function">preload</span><span class="p">(</span><span class="s2">&quot;res://scenes/enemy.tscn&quot;</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">var</span><span class="w"> </span><span class="n">scene_instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">scene</span><span class="o">.</span><span class="nf">instantiate</span><span class="p">()</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nf">add_child</span><span class="p">(</span><span class="n">scene_instance</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This is referred as <strong>scene composition</strong>, is great for:</p>
+<ul>
+<li>Spawning enemies or projectiles</li>
+<li>Building UI from reusable panels</li>
+<li>Combining modular gameplay parts</li>
+</ul>
+<hr />
+<div class="admonition example">
+<p class="admonition-title"><strong>Try this</strong></p>
+<p>Create a “Spawner” node that instantiates a <code>crate.tscn</code> every 2 seconds.<br />
+Observe how each spawned crate becomes a new child in the SceneTree.</p>
+</div>
+<hr />
+<h2 id="asynchronous-loading-of-large-scenes">Asynchronous Loading of Large Scenes</h2>
+<p>When loading big scenes or high-resolution assets, it’s better to use non-blocking asynchronous threaded loading. This way your scene will be loading in the background without blocking the rest of the application. When the scene is ready it can be switched or added into the current scene wihtou sttuters. </p>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">func</span><span class="w"> </span><span class="nf nf-Declaration">load_next_scene</span><span class="p">():</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">path</span><span class="p">:</span><span class="nb nb-Type">String</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;res://scenes/level2.tscn&quot;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nb">ResourceLoader</span><span class="o">.</span><span class="nf">load_threaded_request</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="c1"># Wait until it&#39;s ready, but keep the game responsive</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="k k-ControlFlow">while</span><span class="w"> </span><span class="nb">ResourceLoader</span><span class="o">.</span><span class="nf">load_threaded_get_status</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="nb">ResourceLoader</span><span class="o">.</span><span class="vi">THREAD_LOAD_LOADED</span><span class="p">:</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="k">await</span><span class="w"> </span><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">process_frame</span><span class="p">()</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">packed</span><span class="p">:</span><span class="nb">PackedScene</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">ResourceLoader</span><span class="o">.</span><span class="nf">load_threaded_get</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">change_scene_to_packed</span><span class="p">(</span><span class="n">packed</span><span class="p">)</span>
+</span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>✅ Useful for splash screens or streaming levels.</p>
+<p>✅ Ideal for splash screens or loading screens.<br />
+⚙️ Threaded loading prevents freezing the main thread while resources load.</p>
 </div>
 <hr />
+<h2 id="advanced-scene-stack-43">Advanced: Scene Stack (4.3+)</h2>
+<p>Godot 4.3 introduced <strong>Scene Stack</strong> helpers. This can be useful for temporary overlays like pause menus.</p>
+<div class="highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">push_scene</span><span class="p">(</span><span class="n">pause_menu_scene</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1"># ... then later</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="nf">get_tree</span><span class="p">()</span><span class="o">.</span><span class="nf">pop_scene</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Keeps the old scene in memory: perfect for modal UIs or in-game dialogs.</p>
+</div>
+<hr />
+<h2 id="scene-organization-tips">Scene Organization Tips</h2>
 <div class="admonition tip">
-<p class="admonition-title"><strong>Scene Organization Tips</strong></p>
+<p class="admonition-title">Scene Organization Tips</p>
 <table>
 <thead>
 <tr>
-<th>tip</th>
-<th>Purpose</th>
+<th>Tip</th>
+<th>Why It Matters</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Use folders like <code>scenes/ui</code>, <code>scenes/levels</code>, <code>scenes/actors</code></td>
-<td>Keeps project structured</td>
+<td>Keeps your project readable</td>
 </tr>
 <tr>
-<td>Use consistent root types (e.g., <code>Node3D</code> for levels, <code>Control</code> for menus)</td>
-<td>Easier transitions</td>
+<td>Use consistent root node types (<code>Control</code> for menus, <code>Node3D</code> for levels)</td>
+<td>Easier to switch scenes cleanly</td>
 </tr>
 <tr>
 <td>Keep one <strong>main scene</strong> (e.g., <code>main.tscn</code>)</td>
 <td>Serves as game entry point</td>
 </tr>
 <tr>
-<td>Use <strong>autoloads</strong> for persistent managers</td>
-<td>Keeps global state across scene loads</td>
+<td>Use <strong>autoloads</strong> for managers (Game, Audio, Save)</td>
+<td>Keeps data alive across scene changes</td>
 </tr>
 </tbody>
 </table>
 </div>
+<hr />
 <h2 id="summary">Summary</h2>
 <table>
 <thead>
@@ -819,19 +977,32 @@ This will add a copy (instance) of that scene in the current scene:</p>
 <tbody>
 <tr>
 <td><strong>SceneTree</strong></td>
-<td>Manages active scenes, nodes, and transitions</td>
+<td>Manages all active nodes and scenes</td>
 </tr>
 <tr>
 <td><strong><code>change_scene_to_file()</code></strong></td>
-<td>Replace current scene entirely</td>
+<td>Load scene by path (replace current)</td>
+</tr>
+<tr>
+<td><strong><code>change_scene_to_packed()</code></strong></td>
+<td>Switch to preloaded PackedScene (faster)</td>
 </tr>
 <tr>
 <td><strong>Instancing</strong></td>
-<td>Add one scene as a node inside another</td>
+<td>Add a scene as a node within another</td>
+</tr>
+<tr>
+<td><strong><code>ResourceLoader</code></strong></td>
+<td>Load resources manually or asynchronously</td>
+</tr>
+<tr>
+<td><strong>Scene Stack</strong></td>
+<td>Temporarily push/pop scenes (e.g., pause menu)</td>
 </tr>
 </tbody>
 </table>
 <hr />
+<p>In the next lesson, we’ll explore Autoloads — special nodes that persist across scene changes and let you share data globally.</p>
 <p>✅ <strong>Next Lesson:</strong> <a href="../autoloads/">Autoloads</a></p>
 
 

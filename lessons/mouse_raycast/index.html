@@ -48,6 +48,8 @@
       
     
     
+      <link rel="stylesheet" href="../../stylesheets/godot/test.css">
+    
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -638,6 +640,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../others/gdscript_test/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CSS Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -767,49 +792,49 @@
 <hr />
 <h2 id="example-picking-objects-with-the-mouse">Example: Picking Objects with the Mouse</h2>
 <p><strong>Scene:</strong></p>
-<div class="highlight"><pre><span></span><code>Main (Node3D)
-├─ Camera3D
-├─ DirectionalLight3D
-├─ Several cubes (StaticBody3D, Area3D, etc. with colliders)
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Main (Node3D)
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├─ Camera3D
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├─ DirectionalLight3D
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├─ Several cubes (StaticBody3D, Area3D, etc. with colliders)
+</span></code></pre></div>
 <p><strong><code>res://scripts/MousePicker.gd</code></strong></p>
-<div class="highlight"><pre><span></span><code><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
-
-<span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">camera</span><span class="p">:</span><span class="w"> </span><span class="n">Camera3D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">Camera3D</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span><span class="w"> </span><span class="n">InputEvent</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">InputEventMouseButton</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">button_index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MOUSE_BUTTON_LEFT</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
-<span class="w">        </span><span class="n">_check_mouse_click</span><span class="p">()</span>
-
-<span class="k">func</span><span class="w"> </span><span class="n">_check_mouse_click</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">mouse_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_viewport</span><span class="p">()</span><span class="o">.</span><span class="n">get_mouse_position</span><span class="p">()</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_origin</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_normal</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000.0</span>
-
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">space_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">direct_space_state</span>
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PhysicsRayQueryParameters3D</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">)</span>
-<span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
-<span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_bodies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
-
-<span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">space_state</span><span class="o">.</span><span class="n">intersect_ray</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">result</span><span class="p">:</span>
-<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">collider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;collider&quot;</span><span class="p">]</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clicked:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; at &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
-<span class="w">        </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">)</span>
-<span class="w">    </span><span class="k">else</span><span class="p">:</span>
-<span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing hit.&quot;</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">extends</span><span class="w"> </span><span class="n">Node3D</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="err">@</span><span class="k">onready</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">camera</span><span class="p">:</span><span class="w"> </span><span class="n">Camera3D</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">$</span><span class="n">Camera3D</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">func</span><span class="w"> </span><span class="n">_unhandled_input</span><span class="p">(</span><span class="n">event</span><span class="p">:</span><span class="w"> </span><span class="n">InputEvent</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">event</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">InputEventMouseButton</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">button_index</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">MOUSE_BUTTON_LEFT</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="n">event</span><span class="o">.</span><span class="n">pressed</span><span class="p">:</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">_check_mouse_click</span><span class="p">()</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">func</span><span class="w"> </span><span class="n">_check_mouse_click</span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">mouse_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_viewport</span><span class="p">()</span><span class="o">.</span><span class="n">get_mouse_position</span><span class="p">()</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_origin</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">from</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">camera</span><span class="o">.</span><span class="n">project_ray_normal</span><span class="p">(</span><span class="n">mouse_pos</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000.0</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">space_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">direct_space_state</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">query</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PhysicsRayQueryParameters3D</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">)</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_areas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">    </span><span class="n">query</span><span class="o">.</span><span class="n">collide_with_bodies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">    </span><span class="k">var</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">space_state</span><span class="o">.</span><span class="n">intersect_ray</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">result</span><span class="p">:</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">collider</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;collider&quot;</span><span class="p">]</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clicked:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; at &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">])</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="w">        </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">    </span><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Nothing hit.&quot;</span><span class="p">)</span>
+</span></code></pre></div>
 <hr />
 <h2 id="example-highlight-object">Example: Highlight Object</h2>
 <p>Add this helper method in the same script:</p>
-<div class="highlight"><pre><span></span><code><span class="k">func</span><span class="w"> </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">:</span><span class="w"> </span><span class="n">Node</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">):</span>
-<span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w">  </span><span class="c1"># yellow tint</span>
-<span class="w">        </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
-<span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">WHITE</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">func</span><span class="w"> </span><span class="n">_highlight</span><span class="p">(</span><span class="n">collider</span><span class="p">:</span><span class="w"> </span><span class="n">Node</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="nb nb-Type">void</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">has_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">        </span><span class="k">var</span><span class="w"> </span><span class="n">mesh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">collider</span><span class="o">.</span><span class="n">get_node</span><span class="p">(</span><span class="s2">&quot;MeshInstance3D&quot;</span><span class="p">)</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">)</span><span class="w">  </span><span class="c1"># yellow tint</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="n">await</span><span class="w"> </span><span class="n">get_tree</span><span class="p">()</span><span class="o">.</span><span class="n">create_timer</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span><span class="o">.</span><span class="n">timeout</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="n">mesh</span><span class="o">.</span><span class="n">modulate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">WHITE</span>
+</span></code></pre></div>
 <hr />
 <h2 id="how-it-works">How It Works</h2>
 <ol>
@@ -831,13 +856,13 @@
 <ul>
 <li><strong>Draw a Debug Ray</strong>:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">debug_draw_line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">get_world_3d</span><span class="p">()</span><span class="o">.</span><span class="n">debug_draw_line</span><span class="p">(</span><span class="n">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="nb nb-Type">Color</span><span class="o">.</span><span class="n">RED</span><span class="p">)</span>
+</span></code></pre></div>
 <ul>
 <li><strong>Pick Only Certain Layers</strong>:</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">query</span><span class="o">.</span><span class="n">collision_mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c1"># only hit objects on layer 2</span>
-</code></pre></div>
+<div class="highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">query</span><span class="o">.</span><span class="n">collision_mask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="mi">2</span><span class="w">   </span><span class="c1"># only hit objects on layer 2</span>
+</span></code></pre></div>
 <ul>
 <li><strong>Right-click, middle-click, drag</strong>, etc.:
   Handle them all via <code>_unhandled_input(event)</code>.</li>
